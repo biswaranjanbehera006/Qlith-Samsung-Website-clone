@@ -6,6 +6,9 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const storedUser = JSON.parse(localStorage.getItem("user"));
 
   if (storedUser && storedUser.name === name && storedUser.password === password) {
+    // ✅ Store the logged-in user
+    localStorage.setItem("loggedInUser", name);
+
     document.getElementById("loginMsg").classList.remove("hidden");
     setTimeout(() => {
       window.location.href = "index.html";
@@ -29,7 +32,6 @@ function verifyMobile() {
   const storedUser = JSON.parse(localStorage.getItem("user"));
 
   if (!newPasswordInput.classList.contains("hidden")) {
-    // Update password
     storedUser.password = newPasswordInput.value;
     localStorage.setItem("user", JSON.stringify(storedUser));
     document.getElementById("resetSuccess").classList.remove("hidden");

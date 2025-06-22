@@ -1,4 +1,3 @@
-// Search functionality
 document.getElementById('searchInput').addEventListener('input', function () {
   const search = this.value.toLowerCase();
   const products = document.querySelectorAll('.refrigerator-card');
@@ -9,7 +8,6 @@ document.getElementById('searchInput').addEventListener('input', function () {
   });
 });
 
-// Sort functionality
 document.getElementById('sortSelect').addEventListener('change', function () {
   const order = this.value;
   const list = document.getElementById('refrigeratorList');
@@ -25,16 +23,22 @@ document.getElementById('sortSelect').addEventListener('change', function () {
   cards.forEach(card => list.appendChild(card));
 });
 
-// Add to Cart functionality
 document.querySelectorAll('.refrigerator-cart').forEach(button => {
   button.addEventListener('click', () => {
+    const username = localStorage.getItem('loggedInUser');
+    if (!username) {
+      alert("Please log in to add items to cart.");
+      return;
+    }
+    const cartKey = `cartItems_${username}`;
+
     const card = button.closest('.refrigerator-card');
     const name = card.querySelector('.refrigerator-name').textContent;
     const priceText = card.querySelector('.refrigerator-new').textContent.replace('₹', '').replace(',', '');
     const price = parseFloat(priceText);
     const image = card.querySelector('img').src;
 
-    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    let cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
     const existingItem = cartItems.find(item => item.name === name);
 
     if (existingItem) {
@@ -43,9 +47,8 @@ document.querySelectorAll('.refrigerator-cart').forEach(button => {
       cartItems.push({ name, price, image, quantity: 1 });
     }
 
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem(cartKey, JSON.stringify(cartItems));
 
-    // Popup message
     const popup = document.createElement('div');
     popup.className = 'popup-center';
     popup.textContent = "✅ Product added to cart!";
@@ -54,7 +57,6 @@ document.querySelectorAll('.refrigerator-cart').forEach(button => {
   });
 });
 
-// Add style dynamically for popup
 const popupStyle = document.createElement('style');
 popupStyle.innerHTML = `
 .popup-center {
@@ -70,6 +72,5 @@ popupStyle.innerHTML = `
   font-weight: bold;
   z-index: 9999;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-`;
+}`;
 document.head.appendChild(popupStyle);

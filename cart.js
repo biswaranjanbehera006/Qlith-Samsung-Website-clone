@@ -1,4 +1,6 @@
-let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+const username = localStorage.getItem('loggedInUser');
+const cartKey = `cartItems_${username}`;
+let cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
 const container = document.getElementById('cartContainer');
 const emptyMsg = document.getElementById('emptyMessage');
 const summary = document.getElementById('summarySection');
@@ -13,7 +15,7 @@ function updateCartView() {
   container.innerHTML = '';
   let subtotal = 0;
 
-  if (cartItems.length === 0) {
+  if (!username || cartItems.length === 0) {
     emptyMsg.style.display = 'block';
     summary.style.display = 'none';
     return;
@@ -56,13 +58,13 @@ function updateCartView() {
 function updateQuantity(index, change) {
   cartItems[index].quantity += change;
   if (cartItems[index].quantity < 1) return;
-  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  localStorage.setItem(cartKey, JSON.stringify(cartItems));
   updateCartView();
 }
 
 function removeItem(index) {
   cartItems.splice(index, 1);
-  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  localStorage.setItem(cartKey, JSON.stringify(cartItems));
   updateCartView();
 }
 
