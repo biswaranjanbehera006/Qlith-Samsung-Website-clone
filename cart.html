@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+
+  <div class="cart-header">
+    <button class="back-btn" onclick="window.location.href='index.html'">← Home</button>
+    <h2>Your Cart</h2>
+  </div>
+
+  <div id="cartContainer" class="cart-container"></div>
+
+  <div id="emptyMessage" class="empty-cart" style="display: none;">
+    🛒 Your cart is empty.
+  </div>
+
+  <!-- Wrapper for responsive alignment of summary section -->
+  <div class="summary-wrapper">
+    <div id="summarySection" class="cart-summary" style="display: none;">
+      <div class="summary-line"><span>Subtotal:</span> <span id="subtotal">₹0</span></div>
+
+      <div class="coupon-section">
+        <select id="couponSelect">
+          <option value="0">Select a Coupon</option>
+          <option value="200">🎉 SAVE ₹200</option>
+          <option value="500">💳 HDFCCR ₹500</option>
+          <option value="300">🎊 MOON ₹300</option>
+          <option value="1000">📱 WOW34 ₹1000</option>
+        </select>
+        <button onclick="applyCoupon()">Apply Coupon</button>
+      </div>
+
+      <div class="summary-line"><span>Discount:</span> <span id="discount">₹0</span></div>
+      <div class="summary-line"><span>GST (5%):</span> <span id="gst">₹0</span></div>
+      <div class="summary-line"><span>🚚Delivery Fee:</span> <span id="delivery">+ ₹90</span></div>
+      <div class="summary-line total"><strong>Total:</strong> <strong id="total">₹0</strong></div>
+
+      <button class="order-btn" onclick="window.location.href='order.html'">🧾 Order</button>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+</body>
+</html>

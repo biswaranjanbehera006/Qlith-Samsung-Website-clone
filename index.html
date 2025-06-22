@@ -1,13 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samsung India | Galaxy S25 Ultra</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <div class="nav-left">
+      <h1 class="brand-text">SAMSUNG</h1>
+      <a href="#" id="shopToggle" class="shop-link">Shop</a>
+    </div>
+
+    <!-- Right Icons -->
+    <div class="nav-right">
+      <div class="search-box">
+        <input type="text" placeholder="Search" />
+      </div>
+      <!-- Cart Icon wrapped with anchor -->
+<a href="cart.html" title="View Cart">
+  <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
+    <path d="M6 6h15l-1.5 9h-13z" />
+    <circle cx="9" cy="20" r="1" />
+    <circle cx="18" cy="20" r="1" />
+  </svg>
+</a>
+
+<!-- Profile/User Icon wrapped with anchor -->
+<a href="login.html" title="User Profile">
+  <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
+    <circle cx="12" cy="8" r="4" />
+    <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+  </svg>
+</a>
+    </div>
+  </div>
+
+  <!-- Shop Dropdown -->
+  <div id="shopPanel" class="shop-panel">
+    <div class="shop-panel-content">
+      <ul class="shop-items">
+        <li><a href="mobile_Sec.html"><img src="images/Mobiles.png" alt="Mobile"><span>Mobile</span></a></li>
+        <li><a href="tab.html"><img src="images/Tabs.png" alt="Tabs"><span>Tabs</span></a></li>
+        <li><a href="watch.html"><img src="images/SmartWatch.png" alt="Smartwatch"><span>Smartwatch</span></a></li>
+        <li><a href="laptop.html"><img src="images/Laptop.png" alt="Laptops"><span>Laptops</span></a></li>
+        <li><a href="refrigrator.html"><img src="images/Refrigerator.png" alt="Refrigerator"><span>Refrigerator</span></a></li>
+        <li><a href="burds.html"><img src="images/Buds.png" alt="Buds"><span>Buds</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="https://images.samsung.com/is/content/samsung/assets/in/ux3/home/Hero_KV_Home_PC_1920x1080.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay-content">
+    <h1>Galaxy S25 Ultra</h1>
+    <h2>Galaxy AI ✨</h2>
+    <div class="buttons">
+      <a href="#" class="btn">Learn more</a>
+      <a href="mobile_Sec.html" class="btn">Buy</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Galaxy S25 | S25+ Section (Responsive) -->
+<section class="w-full ">
+  <!-- Mobile Layout: Text First -->
+  <div class="flex flex-col md:hidden px-6 py-10 bg-white text-black">
+    <!-- Text -->
+    <div class="mb-6">
+      <h1 class="text-4xl font-bold mb-3">Galaxy S25 | S25+</h1>
+      <h2 class="text-2xl mb-4 flex items-center font-medium">
+        Galaxy AI
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2l1.41 4.59L18 8l-4.59 1.41L12 14l-1.41-4.59L6 8l4.59-1.41z" />
+        </svg>
+      </h2>
+      <div class="flex gap-4 mt-4 flex-wrap">
+        <a href="#" class="px-5 py-2 border border-black rounded-full font-medium hover:bg-black hover:text-white transition">Learn more</a>
+        <a href="mobile_Sec.html" class="px-5 py-2 border border-black rounded-full font-medium hover:bg-black hover:text-white transition">Buy</a>
+      </div>
+    </div>
+    <!-- Image -->
+    <img src="https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-kv.jpg?imbypass=true"
+      alt="Galaxy S25"
+      class="w-full object-cover rounded-md" />
+  </div>
+
+  <!-- Desktop / Tablet: Text Over Image -->
+  <div class="hidden md:block relative w-full h-screen bg-white">
+    <!-- Image -->
+    <img src="https://images.samsung.com/in/smartphones/galaxy-s25/images/galaxy-s25-features-kv.jpg?imbypass=true"
+      alt="Galaxy S25"
+      class="absolute inset-0 w-full h-full object-cover z-0" />
+
+    <!-- Text Overlay -->
+    <div class="relative z-10 h-full flex items-center justify-start px-10 text-black">
+      <div class="max-w-xl">
+        <h1 class="text-5xl lg:text-6xl font-bold mb-4">Galaxy S25 | S25+</h1>
+        <h2 class="text-2xl mb-6 flex items-center font-medium">
+          Galaxy AI
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l1.41 4.59L18 8l-4.59 1.41L12 14l-1.41-4.59L6 8l4.59-1.41z" />
+          </svg>
+        </h2>
+        <div class="flex gap-4 flex-wrap mt-4">
+          <a href="#" class="px-6 py-2 border border-black rounded-full font-medium hover:bg-black hover:text-white transition">Learn more</a>
+          <a href="#" class="px-6 py-2 border border-black rounded-full font-medium hover:bg-black hover:text-white transition">Buy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Product Showcase -->
+<section class="product-showcase">
+  <div class="container">
     
-   <center><h1><b>Samsung Website Clone</b></h1></center>
-   
+    <!-- Galaxy S25 Ultra -->
+    <a href="mobile_Sec.html" class="box block">
+      <h2>Galaxy S25 Ultra</h2>
+      <div class="image-container">
+        <img src="images/s25.jpg" alt="Galaxy S25 Ultra" />
+        <div class="overlay"><button>Learn more</button></div>
+      </div>
+    </a>
+
+    <!-- Galaxy S25 Edge -->
+    <a href="mobile_Sec.html" class="box block">
+      <h2>Galaxy S25 Edge</h2>
+      <div class="image-container">
+        <img src="images/s25Edge.jpg" alt="Galaxy S25 Edge" />
+        <div class="overlay"><button>Learn more</button></div>
+      </div>
+    </a>
+
+    <!-- Galaxy Tab S10 Ultra -->
+    <a href="tab.html" class="box block">
+      <h2>Galaxy Tab S10 Ultra</h2>
+      <div class="image-container">
+        <img src="images/tab.jpg" alt="Galaxy Tab S10 Ultra" />
+        <div class="overlay"><button>Learn more</button></div>
+      </div>
+    </a>
+
+    <!-- Galaxy Watch Ultra -->
+    <a href="watch.html" class="box block">
+      <h2>Galaxy Watch Ultra</h2>
+      <div class="image-container">
+        <img src="images/watch.jpg" alt="Galaxy Watch Ultra" />
+        <div class="overlay"><button>Learn more</button></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+
+<div class="home-ai-tv">
+ <section class="flex flex-col lg:flex-row items-center justify-center w-full min-h-screen bg-[#f5f5f5] overflow-hidden px-4 lg:px-20 py-10">
+
+    <!-- Left content -->
+    <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+  <h1 class="text-4xl md:text-6xl font-bold mb-4 text-black">2025 AI TVs</h1>
+  <p class="text-xl mb-6 text-black">Explore new AI TVs</p>
+  
+  <div class="flex gap-4 flex-wrap mb-8">
+    <a href="#" class="font-medium text-black border border-black px-4 py-2 rounded-full no-underline">Learn more</a>
+
+    <a href="#" class="border border-white px-6 py-2 rounded-full font-medium hover:bg-white text-black  hover:text-blue transition">View all</a>
+  </div>
+
+  <div class="text-sm text-white">
+    <svg xmlns="http://www.w3.org/2000/svg" class="inline h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</div>
+
+
+    <!-- Right content (image + bottom caption) -->
+    <div class="w-full lg:w-1/2 flex flex-col items-center">
+      <img
+        src="images/image.png"
+        alt="Samsung AI TV"
+        class="w-full h-auto rounded-xl shadow-xl"
+      />
+      <div class="text-center mt-6">
+        <h2 class="text-2xl md:text-3xl font-semibold text-black">Samsung Vision AI ✨ is here</h2>
+        <p class="mt-2 text-gray-700 font-medium">QLED | Neo QLED | Neo QLED 8K | OLED | The Frame</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+
+
+
+<section class="pro-grid">
+  <div class="product-grid">
+    <div class="product-box">
+      <h3>Neo QLED 8K</h3>
+      <div class="product-image">
+        <img src="http://images.samsung.com/is/image/samsung/assets/in/ux3/home/MDVD_Feature_Card1_560X560.jpg?$560_560_JPG$" alt="Neo QLED 8K" />
+        <button class="learn-more-btn">Learn more</button>
+      </div>
+    </div>
+
+    <div class="product-box">
+      <h3>The Frame</h3>
+      <div class="product-image">
+        <img src="http://images.samsung.com/is/image/samsung/assets/in/ux3/home/MDVD_Feature_Card2_560X560.jpg?$560_560_JPG$" alt="The Frame" />
+        <button class="learn-more-btn">Learn more</button>
+      </div>
+    </div>
+
+    <div class="product-box">
+      <h3>Q-Series Soundbar</h3>
+      <div class="product-image">
+        <img src="http://images.samsung.com/is/image/samsung/assets/in/ux3/home/MDVD_Feature_Card3_560X560.jpg?$560_560_JPG$" alt="Q-Series Soundbar" />
+        <button class="learn-more-btn">Learn more</button>
+      </div>
+    </div>
+
+    <div class="product-box">
+      <h3>Odyssey OLED G8</h3>
+      <div class="product-image">
+        <img src="http://images.samsung.com/is/image/samsung/assets/in/ux3/home/MDVD_Feature_Card4_560X560.jpg?$560_560_JPG$" alt="Odyssey OLED G8" />
+        <button class="learn-more-btn">Learn more</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Bespoke AI Banner -->
+<section class="main-banner">
+    <div class="banner-content">
+      <div class="banner-text">
+        <h1>Bespoke AI <img src="images/sparkle2.png" alt="Sparkle" class="sparkle-icon" /></h1>
+        <p>Home living made simple</p>
+        <div class="buttons">
+          <a href="#" class="btn learn">Learn more</a>
+          <a href="#" class="btn buy">Buy</a>
+        </div>
+      </div>
+      <div class="banner-image">
+        <img src="images/bespoke.jpg" alt="AI Products" />
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Showcase Product section -->
+   <!-- 🧊 Samsung Product Cards Section -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 py-10 text-center font-sans text-black bg-white">
+
+  <!-- Card 1 -->
+  <div class="card cursor-pointer p-4 border border-gray-200 rounded-lg shadow-sm transition-transform duration-300 hover:scale-105" onclick="showBuy(this)">
+    <h2 class="text-xl font-bold mb-3">Bespoke AI Refrigerator</h2>
+    <img src="images/BEspokeRefrigerator.jpg" alt="Refrigerator" class="mx-auto w-40 h-auto" />
+    <div class="buy mt-4 hidden">
+      <button class="bg-black text-white text-sm font-medium py-2 px-6 rounded-full hover:bg-gray-800 transition">Buy</button>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card cursor-pointer p-4 border border-gray-200 rounded-lg shadow-sm transition-transform duration-300 hover:scale-105" onclick="showBuy(this)">
+    <h2 class="text-xl font-bold mb-3">Bespoke AI Laundry</h2>
+    <img src="images/bespokeLaundray.jpg" alt="Laundry" class="mx-auto w-40 h-auto" />
+    <div class="buy mt-4 hidden">
+      <button class="bg-black text-white text-sm font-medium py-2 px-6 rounded-full hover:bg-gray-800 transition">Buy</button>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card cursor-pointer p-4 border border-gray-200 rounded-lg shadow-sm transition-transform duration-300 hover:scale-105" onclick="showBuy(this)">
+    <h2 class="text-xl font-bold mb-3">Bespoke AI WindFree</h2>
+    <img src="images/bespokeAiAC.jpg" alt="AC" class="mx-auto w-40 h-auto" />
+    <div class="buy mt-4 hidden">
+      <button class="bg-black text-white text-sm font-medium py-2 px-6 rounded-full hover:bg-gray-800 transition">Buy</button>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card cursor-pointer p-4 border border-gray-200 rounded-lg shadow-sm transition-transform duration-300 hover:scale-105" onclick="showBuy(this)">
+    <h2 class="text-xl font-bold mb-3">Microwave Ovens</h2>
+    <img src="images/MicrowaveOven.jpg" alt="Microwave" class="mx-auto w-40 h-auto" />
+    <div class="buy mt-4 hidden">
+      <button class="bg-black text-white text-sm font-medium py-2 px-6 rounded-full hover:bg-gray-800 transition">Buy</button>
+    </div>
+  </div>
+
+</section>
+
+
+
+<section class="px-4 md:px-12 py-10 bg-white text-black font-sans">
+  <h2 class="text-3xl md:text-4xl font-bold mb-8">Latest Highlights</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    
+    <!-- Product 1 -->
+    <a href="tab.html" class="block">
+      <div class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition">
+        <img src="images/home_S10Fe.avif" alt="Galaxy Tab S10 FE" class="mx-auto w-36 h-auto mb-4 transition-transform duration-300 hover:scale-105" />
+        <h3 class="text-base font-semibold mb-1">Galaxy Tab S10 FE (Wi-Fi, 8 GB Memory)</h3>
+        <p class="font-bold text-lg">₹ 42999.00</p>
+      </div>
+    </a>
+
+    <!-- Product 2 -->
+    <a href="watch.html" class="block">
+      <div class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition">
+        <img src="images/home_watch7.avif" alt="Galaxy Watch7" class="mx-auto w-36 h-auto mb-4 transition-transform duration-300 hover:scale-105" />
+        <h3 class="text-base font-semibold mb-1">Galaxy Watch7 (LTE, 4.4 cm)</h3>
+        <p class="font-bold text-lg">₹ 36999.00</p>
+      </div>
+    </a>
+
+    <!-- Product 3 -->
+    <a href="tab.html" class="block">
+      <div class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition">
+        <img src="images/home A9.avif" alt="Galaxy Tab A9" class="mx-auto w-36 h-auto mb-4 transition-transform duration-300 hover:scale-105" />
+        <h3 class="text-base font-semibold mb-1">Galaxy Tab A9 (LTE, 4 GB Memory)</h3>
+        <p class="font-bold text-lg">₹ 15999.00</p>
+      </div>
+    </a>
+
+    <!-- Product 4 -->
+    <a href="tab.html" class="block">
+      <div class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition">
+        <img src="images/home a9+.webp" alt="Galaxy Tab A9+ 5G" class="mx-auto w-36 h-auto mb-4 transition-transform duration-300 hover:scale-105" />
+        <h3 class="text-base font-semibold mb-1">Galaxy Tab A9+ 5G (8 GB Memory)</h3>
+        <p class="font-bold text-lg">₹ 24999.00</p>
+      </div>
+    </a>
+
+    <!-- Product 5 -->
+    <a href="mobile_Sec.html" class="block">
+      <div class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition">
+        <img src="images/home s25ultra.avif" alt="Galaxy S25 Ultra" class="mx-auto w-36 h-auto mb-4 transition-transform duration-300 hover:scale-105" />
+        <h3 class="text-base font-semibold mb-1">Galaxy S25 Ultra 5G (12 GB Ram)</h3>
+        <p class="font-bold text-lg">₹ 129999.00</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Explore the Stories Section -->
+  <section class="max-w-screen-xl mx-auto px-4 py-10 bg-white text-black font-sans">
+    <h2 class="text-3xl font-bold mb-8">Explore the Stories</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <!-- Story 1 -->
+      <a href="https://www.samsung.com/in/explore/brand/explore-how-our-ai-empowers-you/" target="_blank"
+        class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+        <img src="images/AIpowered.jpg" alt="AI Empowers"
+          class="rounded-lg mx-auto mb-3 w-full object-cover" />
+        <p class="text-sm font-medium">Explore how our AI empowers you</p>
+      </a>
+
+      <!-- Story 2 -->
+      <a href="https://www.samsung.com/in/explore/brand/see-whats-possible-with-the-new-one-ui/" target="_blank"
+        class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+        <img src="images/oneUI.jpg" alt="One UI"
+          class="bg-gray-100 p-6 rounded-lg mx-auto mb-3 w-full object-cover" />
+        <p class="text-sm font-medium">See what's possible with the new One UI</p>
+      </a>
+
+      <!-- Story 3 -->
+      <a href="https://www.samsung.com/in/explore/brand/discover-how-smartthings-got-smarter/" target="_blank"
+        class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+        <img src="images/Sthings.jpg" alt="SmartThings"
+          class="bg-gray-100 p-6 rounded-lg mx-auto mb-3 w-full object-cover" />
+        <p class="text-sm font-medium">Discover how SmartThings got smarter</p>
+      </a>
+
+      <!-- Story 4 -->
+      <a href="https://www.samsung.com/in/explore/brand/steps-towards-a-better-future/" target="_blank"
+        class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+        <img src="images/BetterFuture.jpg" alt="Better Future"
+          class="rounded-lg mx-auto mb-3 w-full object-cover" />
+        <p class="text-sm font-medium">Steps towards to a better future</p>
+      </a>
+
+      <!-- Story 5 -->
+      <a href="https://www.samsung.com/in/explore/brand/let-our-products-ease-your-day/" target="_blank"
+        class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+        <img src="images/ProEase.jpg" alt="Ease Your Day"
+          class="rounded-lg mx-auto mb-3 w-full object-cover" />
+        <p class="text-sm font-medium">Let our product ease your day</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 text-sm text-gray-800">
+    <div class="max-w-screen-xl mx-auto px-4 py-10 flex justify-center">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-12 w-full">
+        <!-- Product & Service -->
+        <div>
+          <h3 class="font-bold mb-2">Product & Service</h3>
+          <ul class="space-y-1 text-left">
+            <li>Smartphones</li>
+            <li>Tablets</li>
+            <li>Audio Sound</li>
+            <li>Watches</li>
+            <li>Smart Switch</li>
+            <li>Mobile Accessories</li>
+            <li>TVs</li>
+            <li>Sound Devices</li>
+            <li>Refrigerators</li>
+            <li>Laundry</li>
+            <li>Air Solutions</li>
+            <li>Cooking Appliances</li>
+            <li>Monitors</li>
+            <li>Memory Storage</li>
+          </ul>
+        </div>
+
+        <!-- Shop -->
+        <div>
+          <h3 class="font-bold mb-2">Shop</h3>
+          <ul class="space-y-1 text-left">
+            <li>FAQs</li>
+            <li>Contact Us</li>
+            <li>Welcome Voucher</li>
+            <li>Samsung Referral Advantage</li>
+            <li>Samsung Student Advantage</li>
+            <li>Defence Purchase Program</li>
+            <li>Corporate Employee Program</li>
+            <li>Corporate Bulk Purchase</li>
+            <li>Samsung Experience Store</li>
+            <li>Store Locator</li>
+            <li>Smart Club</li>
+            <li>Terms of Use</li>
+            <li>Order Grievance Redressal</li>
+            <li>Explore</li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h3 class="font-bold mb-2">Support</h3>
+          <ul class="space-y-1 text-left">
+            <li>WhatsApp Us ↗</li>
+            <li>Sign Language ↗</li>
+            <li>Email Us ↗</li>
+            <li>Call Us</li>
+            <li>Email the CEO</li>
+            <li>Community ↗</li>
+            <li>Product Registration</li>
+            <li>Track Repair</li>
+            <li>Service Centre</li>
+            <li>Share Your Opinion</li>
+            <li>Chat with us ↗</li>
+          </ul>
+        </div>
+
+        <!-- Account & Community -->
+        <div>
+          <h3 class="font-bold mb-2">Account & Community</h3>
+          <ul class="space-y-1 text-left">
+            <li>My Page</li>
+            <li>My Products</li>
+            <li>Orders</li>
+            <li>Wishlist</li>
+            <li>Vouchers</li>
+            <li>My Referrals</li>
+            <li>Service</li>
+            <li>Community</li>
+          </ul>
+        </div>
+
+        <!-- Sustainability & About Us -->
+        <div>
+          <h3 class="font-bold mb-2">Sustainability</h3>
+          <ul class="space-y-1 text-left">
+            <li>Environment</li>
+            <li>Security & Privacy</li>
+            <li>Accessibility</li>
+            <li>Diversity · Equity · Inclusion</li>
+            <li>Corporate Citizenship ↗</li>
+            <li>Corporate Sustainability ↗</li>
+          </ul>
+
+          <h3 class="font-bold mt-6 mb-2">About Us</h3>
+          <ul class="space-y-1 text-left">
+            <li>Company Info</li>
+            <li>Business Area</li>
+            <li>Brand Identity</li>
+            <li>Careers</li>
+            <li>Investor Relations ↗</li>
+            <li>Newsroom ↗</li>
+            <li>Ethics</li>
+            <li>Samsung Design ↗</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom info -->
+    <div class="border-t border-gray-200">
+      <div class="max-w-screen-xl mx-auto px-4 py-6 text-xs text-gray-600 space-y-2 text-left">
+        <p>Copyright ⓒ 1995-2025 SAMSUNG All Rights reserved.</p>
+        <p>
+          Please dispose of e-waste and plastic waste responsibly.<br />
+          For more information or e-waste pick up, please call 1800 5 7267864 or
+          <a href="#" class="text-blue-600 underline">click here</a> for more details.
+        </p>
+        <p>
+          Registered Office Address: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001<br />
+          Corporate Identification Number (CIN): U31900DL1995PTC071387
+        </p>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="max-w-screen-xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center border-t border-gray-200">
+        <div class="space-x-4 text-xs text-gray-600">
+          <span>India/English</span>
+          <a href="#" class="hover:underline">Privacy</a>
+          <a href="#" class="hover:underline">Legal</a>
+          <a href="#" class="hover:underline">CSR Policy</a>
+          <a href="#" class="hover:underline">Sitemap</a>
+        </div>
+        <div class="mt-2 md:mt-0 space-x-3 text-xl text-gray-600">
+          <span class="text-sm">Stay in the Loop?</span>
+          <i class="fab fa-x-twitter"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-linkedin"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
 </body>
 </html>

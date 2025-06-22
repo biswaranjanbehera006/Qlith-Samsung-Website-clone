@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+.refrigerator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.refrigerator-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.cart-link {
+  margin-left: 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #2b6cb0;
+}
+.refrigerator-container {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 600px) {
+  .refrigerator-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .refrigerator-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.refrigerator-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.refrigerator-card:hover .refrigerator-image {
+  transform: scale(1.05);
+}
+.refrigerator-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.refrigerator-name {
+  font-size: 1.1rem;
+  margin: 10px 0 5px;
+}
+.refrigerator-rating,
+.refrigerator-color,
+.refrigerator-capacity,
+.refrigerator-price {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+.refrigerator-new {
+  font-weight: bold;
+  color: green;
+}
+.refrigerator-old {
+  text-decoration: line-through;
+  margin-left: 10px;
+  color: #999;
+}
+.refrigerator-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.refrigerator-cart {
+  background: linear-gradient(135deg, #2b6cb0, #2c5282);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1;
+  transition: 0.3s;
+}
+.refrigerator-cart:hover {
+  background: linear-gradient(135deg, #2c5282, #2b6cb0);
+}
+.refrigerator-info {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+
+
+
+
+.sort-dropdown {
+  margin: 0 15px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 35px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #2b6cb0;
+  font-weight: bold;
+}
+
+
+
+
+
+/* fotter css */
+
+.footer-navigation {
+  padding: 40px 20px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  min-width: 180px;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-links li:hover {
+  color: #000;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .footer-container {
+    gap: 30px;
+  }
+  .footer-column {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-column {
+    flex: 1 1 100%;
+  }
+  .footer-navigation {
+    padding: 30px 15px;
+  }
+}

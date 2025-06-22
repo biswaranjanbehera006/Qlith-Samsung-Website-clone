@@ -1,0 +1,560 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ✅ Navbar Styling */
+.navbar {
+  width: 100%;
+  padding: 20px 40px;
+  background-color: transparent;
+  position: absolute; /* ensure it's over the hero section */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  color: white;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  color: white;
+}
+
+.shop-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.shop-link:hover {
+  opacity: 0.7;
+}
+
+/* Right: Search and Icons */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  padding: 6px 10px;
+  border-radius: 20px;
+  background-color: #1f1f1f;
+  border: 1px solid #444;
+  color: white;
+  outline: none;
+}
+
+.nav-icon {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.nav-icon:hover {
+  opacity: 0.7;
+}
+
+/* ✅ Shop Dropdown Panel */
+.shop-panel {
+  width: 100%;
+  background-color: white;
+  color: black;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+}
+
+.shop-panel.open {
+  max-height: 250px;
+}
+
+.shop-panel-content {
+  padding: 20px 40px;
+}
+
+.shop-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  list-style: none;
+}
+
+.shop-items li a {
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.shop-items li a:hover {
+  transform: translateY(-5px);
+}
+
+.shop-items img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* ✅ Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay-content {
+  position: relative;
+  z-index: 10;
+  padding: 100px 60px;
+  max-width: 600px;
+}
+
+.overlay-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.overlay-content h2 {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid white;
+  margin-right: 15px;
+  text-decoration: none;
+  color: white;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* ✅ Product Showcase */
+.product-showcase {
+  background-color: #fff;
+  color: #000;
+  padding: 60px 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.box {
+  text-align: center;
+}
+
+.box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f5f5f5;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay button {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.overlay button:hover {
+  background: #222;
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 992px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-left,
+  .nav-right {
+    width: 100%;
+    margin-top: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .overlay-content {
+    padding: 60px 30px;
+  }
+
+  .overlay-content h1 {
+    font-size: 36px;
+  }
+
+  .overlay-content h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .search-box input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .shop-items {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-content h1 {
+    font-size: 26px;
+  }
+
+  .overlay-content h2 {
+    font-size: 16px;
+  }
+
+  .overlay button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+.home-ai-tv
+{
+margin: 0;
+padding: 0;
+height: 100%;
+/* background-color: #f5f5f5; */
+}
+
+
+
+
+/* product grid sec */
+
+ .pro-grid {
+      margin: 0;
+      font-family: 'SamsungOne', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-box {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .product-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-box h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .product-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .product-box:hover img {
+      transform: scale(1.05);
+    }
+
+    .learn-more-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .product-box:hover .learn-more-btn {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .product-box h3 {
+        font-size: 1rem;
+      }
+
+      .learn-more-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+    }
+
+
+    /* Bespoke AI Section */
+
+    
+.main-banner {
+  background-color: black;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.banner-text {
+  flex: 1 1 400px;
+}
+
+.banner-text h1 {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sparkle-icon {
+  width: 40px;
+  height: auto;
+}
+
+.banner-text p {
+  margin-top: 15px;
+  font-size: 1.3rem;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.btn.learn:hover {
+  background-color: white;
+  color: black;
+}
+
+.btn.buy {
+  background-color: white;
+  color: black;
+}
+
+.btn.buy:hover {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+
+.banner-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.banner-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* -------- Responsive Design -------- */
+
+@media (max-width: 1024px) {
+  .banner-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner-text p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-text h1 {
+    justify-content: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-text h1 {
+    font-size: 2rem;
+  }
+
+  .banner-text p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .sparkle-icon {
+    width: 30px;
+  }
+}

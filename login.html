@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Samsung</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col justify-between">
+
+  <!-- Transparent Samsung Navbar -->
+  <header class="w-full bg-transparent">
+    <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4 flex-wrap">
+      <!-- Logo -->
+      <div class="flex items-center space-x-6">
+        <img src="https://www.samsung.com/in/web/dist/img/gnb-mobile-240x64.103c8c2.png" alt="Samsung" class="h-6 md:h-8">
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="w-full md:w-auto mt-4 md:mt-0 flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm font-semibold text-black">
+        <a href="#" class="hover:text-blue-600">Shop</a>
+        <a href="#" class="hover:text-blue-600">AI</a>
+        <a href="#" class="hover:text-blue-600">Mobile</a>
+        <a href="#" class="hover:text-blue-600">TV & AV</a>
+        <a href="#" class="hover:text-blue-600">Home Appliances</a>
+        <a href="#" class="hover:text-blue-600">Computing</a>
+        <a href="#" class="hover:text-blue-600">Displays</a>
+        <a href="#" class="hover:text-blue-600">Accessories</a>
+        <a href="#" class="hover:text-blue-600">SmartThings</a>
+        <a href="#" class="hover:text-blue-600">Air Conditioners</a>
+        <a href="#" class="hover:text-blue-600">Support</a>
+        <a href="#" class="hover:text-blue-600">For Business</a>
+        <!-- Icons -->
+        <a href="#" class="ml-auto">
+          <i class="fas fa-shopping-cart text-xl"></i>
+        </a>
+        <a href="#">
+          <i class="fas fa-user text-xl"></i>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login Form -->
+  <section class="flex justify-center px-4 mt-6">
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+      <form id="loginForm" class="space-y-4">
+        <input type="text" placeholder="Name" id="loginName" required class="w-full px-4 py-2 border rounded-md" />
+        <input type="password" placeholder="Password" id="loginPassword" required class="w-full px-4 py-2 border rounded-md" />
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Login</button>
+        <div class="flex justify-between items-center text-sm mt-2">
+          <button type="button" onclick="openResetPopup()" class="text-blue-600 hover:underline">Forgot Password?</button>
+          <a href="register.html" class="text-blue-600 font-semibold">Create Account</a>
+        </div>
+        <p id="loginMsg" class="text-center font-semibold text-green-600 hidden mt-2">Login Successful</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Reset Password Popup -->
+  <div id="resetPopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-6 rounded-md shadow-md space-y-4 w-80">
+      <h3 class="text-lg font-bold">Reset Password</h3>
+      <input type="text" id="resetMobile" placeholder="Enter Mobile Number" class="w-full px-3 py-2 border rounded-md">
+      <input type="password" id="newPassword" placeholder="Enter New Password" class="w-full px-3 py-2 border rounded-md hidden">
+      <button onclick="verifyMobile()" class="bg-blue-600 text-white py-2 px-4 rounded-md w-full">Next</button>
+      <p id="resetSuccess" class="text-green-600 font-semibold hidden">Password Updated Successfully</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-xs text-gray-600 text-center p-4 mt-10">
+    ⓒ 1995-2025 SAMSUNG All Rights Reserved.
+  </footer>
+
+
+  <footer class="bg-white border-t border-gray-200 text-gray-800 text-sm">
+  <div class="max-w-screen-xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+    
+    <!-- Product & Service -->
+    <div>
+      <h3 class="font-semibold mb-3">Product & Service</h3>
+      <ul class="space-y-1">
+        <li>Smartphones</li>
+        <li>Tablets</li>
+        <li>Audio Sound</li>
+        <li>Watches</li>
+        <li>Smart Switch</li>
+        <li>Mobile Accessories</li>
+        <li>TVs</li>
+        <li>Sound Devices</li>
+        <li>Refrigerators</li>
+        <li>Laundry</li>
+        <li>Air Solutions</li>
+        <li>Cooking Appliances</li>
+        <li>Monitors</li>
+        <li>Memory Storage</li>
+      </ul>
+    </div>
+
+    <!-- Shop -->
+    <div>
+      <h3 class="font-semibold mb-3">Shop</h3>
+      <ul class="space-y-1">
+        <li>FAQs</li>
+        <li>Contact Us</li>
+        <li>Welcome Voucher</li>
+        <li>Samsung Referral Advantage</li>
+        <li>Samsung Student Advantage</li>
+        <li>Defence Purchase Program</li>
+        <li>Corporate Employee Program</li>
+        <li>Corporate Bulk Purchase</li>
+        <li>Samsung Experience Store</li>
+        <li>Store Locator</li>
+        <li>Smart Club</li>
+        <li>Terms of Use</li>
+        <li>Order Grievance Redressal</li>
+        <li>Explore</li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div>
+      <h3 class="font-semibold mb-3">Support</h3>
+      <ul class="space-y-1">
+        <li>WhatsApp Us ↗</li>
+        <li>Sign Language ↗</li>
+        <li>Email Us ↗</li>
+        <li>Call Us</li>
+        <li>Email the CEO</li>
+        <li>Community ↗</li>
+        <li>Product Registration</li>
+        <li>Track Repair</li>
+        <li>Service Centre</li>
+        <li>Share Your Opinion</li>
+        <li>Chat with us ↗</li>
+      </ul>
+    </div>
+
+    <!-- Account & Community -->
+    <div>
+      <h3 class="font-semibold mb-3">Account & Community</h3>
+      <ul class="space-y-1">
+        <li>My Page</li>
+        <li>My Products</li>
+        <li>Orders</li>
+        <li>Wishlist</li>
+        <li>Vouchers</li>
+        <li>My Referrals</li>
+        <li>Service</li>
+        <li>Community</li>
+      </ul>
+    </div>
+
+    <!-- Sustainability & About Us -->
+    <div>
+      <h3 class="font-semibold mb-3">Sustainability</h3>
+      <ul class="space-y-1 mb-6">
+        <li>Environment</li>
+        <li>Security & Privacy</li>
+        <li>Accessibility</li>
+        <li>Diversity · Equity · Inclusion</li>
+        <li>Corporate Citizenship ↗</li>
+        <li>Corporate Sustainability ↗</li>
+      </ul>
+
+      <h3 class="font-semibold mb-3">About Us</h3>
+      <ul class="space-y-1">
+        <li>Company Info</li>
+        <li>Business Area</li>
+        <li>Brand Identity</li>
+        <li>Careers</li>
+        <li>Investor Relations ↗</li>
+        <li>Newsroom ↗</li>
+        <li>Ethics</li>
+        <li>Samsung Design ↗</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- Bottom Info Section -->
+<div class="border-t border-gray-200 text-xs text-gray-600">
+  <div class="max-w-screen-xl mx-auto px-4 py-6 space-y-3 text-left">
+    <p>Copyright ⓒ 1995-2025 SAMSUNG All Rights reserved.</p>
+    <p>
+      Please dispose of e-waste and plastic waste responsibly.<br />
+      For more information or e-waste pick up, please call 1800 5 7267864 or
+      <a href="#" class="text-blue-600 underline">click here</a> for more details.
+    </p>
+    <p>
+      Registered Office Address: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001<br />
+      Corporate Identification Number (CIN): U31900DL1995PTC071387
+    </p>
+  </div>
+
+  <!-- Bottom Links + Social -->
+  <div class="border-t border-gray-200">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      
+      <!-- Left Links -->
+      <div class="flex flex-wrap gap-4 text-xs text-gray-600">
+        <span class="font-semibold">India/English</span>
+        <a href="#" class="hover:underline">Accessibility Help</a>
+        <a href="#" class="hover:underline">Privacy</a>
+        <a href="#" class="hover:underline">Legal</a>
+        <a href="#" class="hover:underline">CSR Policy</a>
+        <a href="#" class="hover:underline">Sitemap</a>
+      </div>
+
+      <!-- Right Social Icons -->
+      <div class="flex items-center gap-2 text-gray-700">
+        <span class="text-sm mr-2">Stay in the Loop?</span>
+        <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-blue-600"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-blue-600"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="hover:text-blue-600"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="hover:text-blue-600"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="login.js"></script>
+</body>
+</html>
