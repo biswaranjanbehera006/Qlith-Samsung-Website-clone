@@ -46,7 +46,7 @@ body {
   color: white;
 }
 
-.shop-link {
+/* .shop-link {
   font-size: 16px;
   font-weight: 600;
   color: white;
@@ -56,7 +56,7 @@ body {
 
 .shop-link:hover {
   opacity: 0.7;
-}
+} */
 
 /* Right: Search and Icons */
 .nav-right {
@@ -85,7 +85,7 @@ body {
 }
 
 /* ✅ Shop Dropdown Panel */
-.shop-panel {
+/* .shop-panel {
   width: 100%;
   background-color: white;
   color: black;
@@ -134,7 +134,7 @@ body {
   height: 60px;
   object-fit: contain;
   margin-bottom: 10px;
-}
+} */
 
 /* ✅ Hero Section */
 .hero {

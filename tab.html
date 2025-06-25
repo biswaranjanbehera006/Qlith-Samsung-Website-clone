@@ -2,267 +2,253 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samsung Tabs</title>
-  <link rel="stylesheet" href="refrigerators.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { scroll-behavior: smooth; }
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out both; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body>
-  <header class="refrigerator-header">
-    <input type="text" id="searchInput" class="refrigerator-search" placeholder="🔍 Search here..."/>
-     <select id="sortSelect" class="sort-dropdown">
-      <option value="">Sort by Price</option>
-      <option value="low">Low to High</option>
-      <option value="high">High to Low</option>
-    </select>
-    <a href="cart.html" class="cart-link">🛒 Cart</a>
-  </header>
+<body class="bg-gradient-to-b from-white to-gray-100 text-gray-800">
 
-  <section class="refrigerator-container" id="refrigeratorList">
-    
-    <div class="refrigerator-card">
-      <img src="images/s10 fen.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Tab S10 FE</h3>
-      <div class="refrigerator-rating">⭐ 4.8 (320 reviews)</div>
-      <div class="refrigerator-color">Color:  Blue Coral</div>
-      <div class="refrigerator-capacity">Wi-Fi, 12 GB Memory</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹54999</span>
-        <span class="refrigerator-old">₹62999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md">
+  <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-4">
+    <a href="index.html" class="flex-shrink-0">
+      <img src="https://www.samsung.com/in/web/dist/img/gnb-mobile-240x64.103c8c2.png" alt="Samsung Logo" class="h-6 md:h-8">
+    </a>
+
+    <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mt-4 sm:mt-0">
+      <input type="text" id="searchInput" placeholder="🔍 Search here..." class="px-3 py-2 border border-gray-300 rounded-lg text-sm w-full sm:w-60">
+      <select id="sortSelect" class="border border-gray-300 px-3 py-2 rounded-lg text-sm w-full sm:w-44">
+        <option value="">Sort by Price</option>
+        <option value="low">Low to High</option>
+        <option value="high">High to Low</option>
+      </select>
+      <a href="cart.html" class="relative" id="cartIconLink">
+        <i class="fas fa-shopping-cart text-2xl text-gray-800"></i>
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+      </a>
     </div>
+  </div>
+</header>
 
+<!-- Product Grid -->
+<main class="max-w-7xl mx-auto px-4 py-8 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  <!-- Tab Cards will be pasted here, you can reuse the structure from previous cards -->
 
-
-     <div class="refrigerator-card">
-      <img src="images/s 9 fe.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"> Galaxy Tab S9 FE+</h3>
-      <div class="refrigerator-rating">⭐ 4.0 (520 reviews)</div>
-      <div class="refrigerator-color">Color:  silver </div>
-      <div class="refrigerator-capacity">S Pen in-Box, Wi-Fi, IP68 Tablet</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹34999</span>
-        <span class="refrigerator-old">₹52999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
+ <!-- 1 -->
+<div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+  <img src="images/s10 fen.jpg" alt="Galaxy Tab S10 FE" class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Tab S10 FE</h3>
+    <p class="text-sm text-gray-600 mb-1">⭐ 4.8 (320 reviews)</p>
+    <p class="text-xs text-gray-500">Color: Blue Coral</p>
+    <p class="text-xs mb-2 text-gray-500">Wi-Fi, 12 GB Memory</p>
+    <div class="flex items-center space-x-2 mb-3">
+      <span class="refrigerator-new text-blue-600 font-semibold text-base">₹54,999</span>
+      <span class="text-gray-400 line-through text-sm">₹62,999</span>
     </div>
-
-
-
-
-     <div class="refrigerator-card">
-      <img src="images/s10 ultra.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">  Galaxy Tab S10 Ultra</h3>
-      <div class="refrigerator-rating">⭐ 4.2 (230 reviews)</div>
-      <div class="refrigerator-color">Color: plantinum silver </div>
-      <div class="refrigerator-capacity">12 GB RAM, 256 GB Storage, Wi-Fi Tablet</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹100999</span>
-        <span class="refrigerator-old">₹120999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
+    <div class="flex space-x-2">
+      <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+      <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
     </div>
+  </div>
+</div>
 
-
-
-
-     <div class="refrigerator-card">
-      <img src="images/s9 fe.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"> Galaxy Tab S9 FE</h3>
-      <div class="refrigerator-rating">⭐ 4.9 (330 reviews)</div>
-      <div class="refrigerator-color">Color: gray </div>
-      <div class="refrigerator-capacity">ROM 128 GB Expandable, S Pen in-Box, Wi-Fi</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹30999</span>
-        <span class="refrigerator-old">₹40999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
+<!-- 2 -->
+<div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+  <img src="images/s 9 fe.jpg" alt="Galaxy Tab S9 FE+" class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Tab S9 FE+</h3>
+    <p class="text-sm text-gray-600 mb-1">⭐ 4.8 (210 reviews)</p>
+    <p class="text-xs text-gray-500">Color: Lavender</p>
+    <p class="text-xs mb-2 text-gray-500">5G, 8 GB RAM</p>
+    <div class="flex items-center space-x-2 mb-3">
+      <span class="refrigerator-new text-blue-600 font-semibold text-base">₹49,999</span>
+      <span class="text-gray-400 line-through text-sm">₹57,999</span>
     </div>
-
-
-
-     <div class="refrigerator-card">
-      <img src="images/a9+.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"> Galaxy Tab A9+</h3>
-      <div class="refrigerator-rating">⭐ 4.2 (330 reviews)</div>
-      <div class="refrigerator-color">Color: gray </div>
-      <div class="refrigerator-capacity">RAM 8 GB, ROM 128 GB Expandable, Wi-Fi Tablet,</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹20999</span>
-        <span class="refrigerator-old">₹30999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
+    <div class="flex space-x-2">
+      <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+      <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
     </div>
+  </div>
+</div>
 
-
-
-     <div class="refrigerator-card">
-      <img src="images/A7.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"> Galaxy Tab A7</h3>
-      <div class="refrigerator-rating">⭐ 4.8(330 reviews)</div>
-      <div class="refrigerator-color">Color: black </div>
-      <div class="refrigerator-capacity">Lite 8.7" 32GB Android Tablet w/ Compact</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹10999</span>
-        <span class="refrigerator-old">₹18999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
+<!-- 3 -->
+<div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+  <img src="images/s10 ultra.jpg" alt="Galaxy Tab S10 Ultra" class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Tab S10 Ultra</h3>
+    <p class="text-sm text-gray-600 mb-1">⭐ 4.9 (400 reviews)</p>
+    <p class="text-xs text-gray-500">Color: Black</p>
+    <p class="text-xs mb-2 text-gray-500">Wi-Fi, 16 GB Memory</p>
+    <div class="flex items-center space-x-2 mb-3">
+      <span class="refrigerator-new text-blue-600 font-semibold text-base">₹89,999</span>
+      <span class="text-gray-400 line-through text-sm">₹99,999</span>
     </div>
-
-
-
-    <div class="refrigerator-card">
-      <img src="images/a9 4g ltenu.webp" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"> Galaxy Tab A9 4g LTE</h3>
-      <div class="refrigerator-rating">⭐ 4.2(130 reviews)</div>
-      <div class="refrigerator-color">Color: black </div>
-      <div class="refrigerator-capacity"> Android Tablet, Octa-core (6nm), Dual Speakers </div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹14999</span>
-        <span class="refrigerator-old">₹18999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
+    <div class="flex space-x-2">
+      <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+      <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
     </div>
+  </div>
+</div>
 
-
-
-    <div class="refrigerator-card">
-      <img src="images/s10 ultra black.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Tab S10 Ultra S</h3>
-      <div class="refrigerator-rating">⭐ 4.2(130 reviews)</div>
-      <div class="refrigerator-color">Color: Gray </div>
-      <div class="refrigerator-capacity">Dynamic AMOLED 2X Display, 12 GB RAM, 512 GB Storage </div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹119999</span>
-        <span class="refrigerator-old">₹129999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
+<!-- 4 -->
+<div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+  <img src="images/s9 fe.jpg" alt="Galaxy Tab S9 FE" class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Tab S9 FE</h3>
+    <p class="text-sm text-gray-600 mb-1">⭐ 4.7 (280 reviews)</p>
+    <p class="text-xs text-gray-500">Color: Gray</p>
+    <p class="text-xs mb-2 text-gray-500">Wi-Fi, 6 GB RAM</p>
+    <div class="flex items-center space-x-2 mb-3">
+      <span class="refrigerator-new text-blue-600 font-semibold text-base">₹44,999</span>
+      <span class="text-gray-400 line-through text-sm">₹52,999</span>
     </div>
+    <div class="flex space-x-2">
+      <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+      <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+    </div>
+  </div>
+</div>
 
-  </section>
+<!-- 5 -->
+<div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+  <img src="images/a9+.jpg" alt="Galaxy Tab A9+" class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Tab A9+</h3>
+    <p class="text-sm text-gray-600 mb-1">⭐ 4.5 (180 reviews)</p>
+    <p class="text-xs text-gray-500">Color: Silver</p>
+    <p class="text-xs mb-2 text-gray-500">Wi-Fi + LTE, 8 GB RAM</p>
+    <div class="flex items-center space-x-2 mb-3">
+      <span class="refrigerator-new text-blue-600 font-semibold text-base">₹21,999</span>
+      <span class="text-gray-400 line-through text-sm">₹27,999</span>
+    </div>
+    <div class="flex space-x-2">
+      <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+      <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+    </div>
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+  <img src="images/A7.jpg" alt="Galaxy Tab A7" class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Tab A7</h3>
+    <p class="text-sm text-gray-600 mb-1">⭐ 4.6 (310 reviews)</p>
+    <p class="text-xs text-gray-500">Color: Gold</p>
+    <p class="text-xs mb-2 text-gray-500">Wi-Fi, 4 GB RAM</p>
+    <div class="flex items-center space-x-2 mb-3">
+      <span class="refrigerator-new text-blue-600 font-semibold text-base">₹18,999</span>
+      <span class="text-gray-400 line-through text-sm">₹24,999</span>
+    </div>
+    <div class="flex space-x-2">
+      <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+      <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+    </div>
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+  <img src="images/a9 4g ltenu.webp" alt="Galaxy Tab A9 4G LTE" class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Tab A9 4G LTE</h3>
+    <p class="text-sm text-gray-600 mb-1">⭐ 4.4 (150 reviews)</p>
+    <p class="text-xs text-gray-500">Color: Mint Green</p>
+    <p class="text-xs mb-2 text-gray-500">LTE, 4 GB RAM</p>
+    <div class="flex items-center space-x-2 mb-3">
+      <span class="refrigerator-new text-blue-600 font-semibold text-base">₹17,499</span>
+      <span class="text-gray-400 line-through text-sm">₹22,999</span>
+    </div>
+    <div class="flex space-x-2">
+      <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+      <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+    </div>
+  </div>
+</div>
+
+<!-- 8 -->
+<div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+  <img src="images/s10 ultra black.jpg" alt="Galaxy Tab S10 Ultra S" class="w-full h-48 object-cover" />
+  <div class="p-4">
+    <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Tab S10 Ultra S</h3>
+    <p class="text-sm text-gray-600 mb-1">⭐ 4.9 (410 reviews)</p>
+    <p class="text-xs text-gray-500">Color: Phantom Black</p>
+    <p class="text-xs mb-2 text-gray-500">5G, 16 GB RAM</p>
+    <div class="flex items-center space-x-2 mb-3">
+      <span class="refrigerator-new text-blue-600 font-semibold text-base">₹94,999</span>
+      <span class="text-gray-400 line-through text-sm">₹1,05,000</span>
+    </div>
+    <div class="flex space-x-2">
+      <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+      <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+    </div>
+  </div>
+</div>
 
 
+</main>
 
-  <!-- footer Section -->
-<section class="footer-navigation">
-  <div class="footer-container">
-    <div class="footer-column">
-      <h4 class="footer-heading">Product & Service</h4>
-      <ul class="footer-links">
+<!-- Footer -->
+<footer class="bg-white border-t mt-12 py-8 text-sm text-gray-600">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+    <div>
+      <h4 class="font-semibold mb-2">Product & Service</h4>
+      <ul class="space-y-1 text-xs">
         <li>Smartphones</li>
         <li>Tablets</li>
         <li>Audio Sound</li>
         <li>Watches</li>
         <li>Smart Switch</li>
-        <li>Mobile Accessories</li>
         <li>TVs</li>
-        <li>Sound Devices</li>
-        <li>Refrigerators</li>
-        <li>Laundry</li>
-        <li>Air Solutions</li>
-        <li>Cooking Appliances</li>
         <li>Monitors</li>
         <li>Memory Storage</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Shop</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">Shop</h4>
+      <ul class="space-y-1 text-xs">
         <li>FAQs</li>
-        <li>Contact Us</li>
         <li>Welcome Voucher</li>
-        <li>Samsung Referral Advantage</li>
-        <li>Samsung Student Advantage</li>
-        <li>Defence Purchase Program</li>
-        <li>Corporate Employee Program</li>
-        <li>Corporate Bulk Purchase</li>
-        <li>Samsung Experience Store</li>
         <li>Store Locator</li>
-        <li>Smart Club</li>
-        <li>Terms of Use</li>
-        <li>Order Grievance Redressal</li>
-        <li>Explore</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Support</h4>
-      <ul class="footer-links">
-        <li>WhatsApp Us</li>
-        <li>Sign Language</li>
-        <li>Email Us</li>
+    <div>
+      <h4 class="font-semibold mb-2">Support</h4>
+      <ul class="space-y-1 text-xs">
         <li>Call Us</li>
-        <li>Email the CEO</li>
-        <li>Community</li>
-        <li>Product Registration</li>
         <li>Track Repair</li>
         <li>Service Centre</li>
-        <li>Share Your Opinion</li>
-        <li>Chat with us</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Account & Community</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">Account & Community</h4>
+      <ul class="space-y-1 text-xs">
         <li>My Page</li>
-        <li>My Products</li>
         <li>Orders</li>
         <li>Wishlist</li>
-        <li>Vouchers</li>
-        <li>My Referrals</li>
-        <li>Service</li>
-        <li>Community</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Sustainability</h4>
-      <ul class="footer-links">
-        <li>Environment</li>
-        <li>Security & Privacy</li>
-        <li>Accessibility</li>
-        <li>Diversity · Equity · Inclusion</li>
-        <li>Corporate Citizenship</li>
-        <li>Corporate Sustainability</li>
-      </ul>
-      <h4 class="footer-heading">About Us</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">About Us</h4>
+      <ul class="space-y-1 text-xs">
         <li>Company Info</li>
-        <li>Business Area</li>
-        <li>Brand Identity</li>
         <li>Careers</li>
-        <li>Investor Relations</li>
         <li>Newsroom</li>
-        <li>Ethics</li>
-        <li>Samsung Design</li>
       </ul>
     </div>
   </div>
-</section>
+</footer>
 
-
-  <script src="refrigerators.js"></script>
+<script src="refrigerators.js"></script>
 </body>
 </html>

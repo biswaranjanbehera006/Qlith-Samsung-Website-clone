@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galaxy S25 Edge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="bg-white shadow-md px-4 md:px-8">
+  <div class="max-w-7xl mx-auto flex items-center justify-between h-16">
+    <div class="flex-shrink-0">
+        <a href="index.html">
+      <img src="https://www.samsung.com/in/web/dist/img/gnb-mobile-240x64.103c8c2.png" alt="Samsung Logo" class="h-5 md:h-6">
+   </a> </div>
+    <ul class="hidden md:flex space-x-6 text-black font-medium text-sm">
+      <li class="hover:text-blue-600 cursor-pointer">Shop</li>
+      <li class="hover:text-blue-600 cursor-pointer">Mobile</li>
+      <li class="hover:text-blue-600 cursor-pointer">TV & AV</li>
+      <li class="hover:text-blue-600 cursor-pointer">Appliances</li>
+      <li class="hover:text-blue-600 cursor-pointer">Computing & Displays</li>
+      <li class="hover:text-blue-600 cursor-pointer">Accessories</li>
+    </ul>
+    <div class="md:hidden">
+      <button id="menuToggle">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+    <ul class="space-y-2 text-black font-medium text-sm">
+      <li class="hover:text-blue-600 cursor-pointer">Shop</li>
+      <li class="hover:text-blue-600 cursor-pointer">Mobile</li>
+      <li class="hover:text-blue-600 cursor-pointer">TV & AV</li>
+      <li class="hover:text-blue-600 cursor-pointer">Appliances</li>
+      <li class="hover:text-blue-600 cursor-pointer">Computing & Displays</li>
+      <li class="hover:text-blue-600 cursor-pointer">Accessories</li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20 py-12 gap-10 bg-white">
+  <!-- Left: Slider -->
+  <div class="w-full md:w-1/2 relative overflow-hidden rounded-xl shadow-lg">
+    <div class="relative w-full h-[400px] md:h-[500px]">
+      <img class="slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+        src="https://www.samsungmobilepress.com/file/6032EF3802F85AEEA9EE48AD701F61B52CF9096198AD8E7A88760353F8873317B3CD033FDD2DD50D2BF5343C1C80D0534F4DDA79521F42FEC90A5B6045852423A8F4CDBEE56418592C399FCE6BB75D0FB1D377DCC2A304F18A94E3A277169D7597D1216B8CBBC047061DC87C5437D70852B6D268C4A018C1CB56009F5075AA7D3CF80343C4EED1C8F46CA9C577A1D250F41D016271C4411C80FBEC91E654AA4887D73C35D1ECF046C4E66D5449FD259175D6B9F05CEBD9D6FD38FA603F55EB10" />
+      <img class="slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+        src="https://images.samsung.com/is/image/samsung/assets/in/2504/reviews/galaxy-s25-edge-share-image.jpg?$ORIGIN_JPG$" />
+      <img class="slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+        src="https://m.media-amazon.com/images/I/71l8KLPYmWL._UF1000,1000_QL80_.jpg" />
+      <img class="slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+        src="https://image-us.samsung.com/us/smartphones/galaxy-s25-edge/images/galaxy-s25-edge-features-one-ui-visual-mo.jpg?imbypass=true" />
+
+      <!-- Navigation Buttons -->
+      <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white text-gray-700 p-3 rounded-full shadow hover:bg-gray-200 transition">
+        <i class="fas fa-chevron-left text-xl"></i>
+      </button>
+      <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white text-gray-700 p-3 rounded-full shadow hover:bg-gray-200 transition">
+        <i class="fas fa-chevron-right text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Right: Info -->
+  <div class="w-full md:w-1/2 space-y-6">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Galaxy S25 Edge</h1>
+    <p class="text-gray-700 text-lg leading-relaxed">
+      Introducing the new Galaxy S25 Edge — Curved to perfection, powered by AI, and designed for immersive experiences with Samsung’s edge display technology.
+    </p>
+
+    <!-- Specs -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-800 text-base">
+      <div class="flex items-center gap-3"><i class="fas fa-mobile-screen-button text-blue-600"></i> 6.7" Dynamic Edge AMOLED</div>
+      <div class="flex items-center gap-3"><i class="fas fa-microchip text-blue-600"></i> Exynos 2500 / Snapdragon 8 Gen 4</div>
+      <div class="flex items-center gap-3"><i class="fas fa-camera text-blue-600"></i> 108MP Triple Camera</div>
+      <div class="flex items-center gap-3"><i class="fas fa-battery-full text-blue-600"></i> 4800mAh, Fast Charging</div>
+      <div class="flex items-center gap-3"><i class="fas fa-memory text-blue-600"></i> 12GB RAM + 512GB</div>
+      <div class="flex items-center gap-3"><i class="fas fa-wifi text-blue-600"></i> 5G · WiFi 7 · Bluetooth 5.3</div>
+    </div>
+
+    <div class="text-3xl font-bold text-gray-900 mt-4">
+      ₹109,999 <span class="text-xl text-gray-500 line-through ml-3">₹119,999</span>
+    </div>
+
+    <a href="mobile_Sec.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition">
+      <i class="fas fa-cart-shopping mr-2"></i> Buy Now
+    </a>
+  </div>
+</section>
+
+<!-- Details Section -->
+<section class="px-6 md:px-20 py-10 space-y-12 bg-gray-50">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <div class="p-6 border rounded-xl shadow hover:shadow-md transition bg-white">
+      <i class="fas fa-eye text-blue-600 text-3xl mb-2"></i>
+      <h3 class="text-xl font-semibold mb-2">Infinity Edge Display</h3>
+      <p class="text-gray-600">Edge-to-edge clarity with adaptive refresh and HDR10+ for vibrant visuals.</p>
+    </div>
+    <div class="p-6 border rounded-xl shadow hover:shadow-md transition bg-white">
+      <i class="fas fa-magic text-purple-600 text-3xl mb-2"></i>
+      <h3 class="text-xl font-semibold mb-2">AI Smart Features</h3>
+      <p class="text-gray-600">Auto camera framing, AI battery optimization, scene enhancer and more.</p>
+    </div>
+    <div class="p-6 border rounded-xl shadow hover:shadow-md transition bg-white">
+      <i class="fas fa-water text-indigo-600 text-3xl mb-2"></i>
+      <h3 class="text-xl font-semibold mb-2">IP68 Rated</h3>
+      <p class="text-gray-600">Dust and water resistant. Built to withstand all your adventures.</p>
+    </div>
+  </div>
+
+  <div class="bg-blue-100 p-6 rounded-xl text-center space-y-4">
+    <h2 class="text-2xl font-bold text-blue-800">Exclusive S25 Edge Offers</h2>
+    <p class="text-gray-700">🔥 ₹8,000 Cashback · 🎧 Galaxy Buds Free · 💳 No Cost EMI</p>
+  </div>
+
+  <div class="text-center">
+    <h2 class="text-xl font-semibold text-gray-800 mb-2">Available Colors</h2>
+    <p class="text-gray-600">Electric Blue · Graphite Gray · Pearl White</p>
+  </div>
+</section>
+
+
+<footer class="bg-white border-t border-gray-200 text-gray-800 text-sm">
+  <div class="max-w-screen-xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+    
+    <!-- Product & Service -->
+    <div>
+      <h3 class="font-semibold mb-3">Product & Service</h3>
+      <ul class="space-y-1">
+        <li>Smartphones</li>
+        <li>Tablets</li>
+        <li>Audio Sound</li>
+        <li>Watches</li>
+        <li>Smart Switch</li>
+        <li>Mobile Accessories</li>
+        <li>TVs</li>
+        <li>Sound Devices</li>
+        <li>Refrigerators</li>
+        <li>Laundry</li>
+        <li>Air Solutions</li>
+        <li>Cooking Appliances</li>
+        <li>Monitors</li>
+        <li>Memory Storage</li>
+      </ul>
+    </div>
+
+    <!-- Shop -->
+    <div>
+      <h3 class="font-semibold mb-3">Shop</h3>
+      <ul class="space-y-1">
+        <li>FAQs</li>
+        <li>Contact Us</li>
+        <li>Welcome Voucher</li>
+        <li>Samsung Referral Advantage</li>
+        <li>Samsung Student Advantage</li>
+        <li>Defence Purchase Program</li>
+        <li>Corporate Employee Program</li>
+        <li>Corporate Bulk Purchase</li>
+        <li>Samsung Experience Store</li>
+        <li>Store Locator</li>
+        <li>Smart Club</li>
+        <li>Terms of Use</li>
+        <li>Order Grievance Redressal</li>
+        <li>Explore</li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div>
+      <h3 class="font-semibold mb-3">Support</h3>
+      <ul class="space-y-1">
+        <li>WhatsApp Us ↗</li>
+        <li>Sign Language ↗</li>
+        <li>Email Us ↗</li>
+        <li>Call Us</li>
+        <li>Email the CEO</li>
+        <li>Community ↗</li>
+        <li>Product Registration</li>
+        <li>Track Repair</li>
+        <li>Service Centre</li>
+        <li>Share Your Opinion</li>
+        <li>Chat with us ↗</li>
+      </ul>
+    </div>
+
+    <!-- Account & Community -->
+    <div>
+      <h3 class="font-semibold mb-3">Account & Community</h3>
+      <ul class="space-y-1">
+        <li>My Page</li>
+        <li>My Products</li>
+        <li>Orders</li>
+        <li>Wishlist</li>
+        <li>Vouchers</li>
+        <li>My Referrals</li>
+        <li>Service</li>
+        <li>Community</li>
+      </ul>
+    </div>
+
+    <!-- Sustainability & About Us -->
+    <div>
+      <h3 class="font-semibold mb-3">Sustainability</h3>
+      <ul class="space-y-1 mb-6">
+        <li>Environment</li>
+        <li>Security & Privacy</li>
+        <li>Accessibility</li>
+        <li>Diversity · Equity · Inclusion</li>
+        <li>Corporate Citizenship ↗</li>
+        <li>Corporate Sustainability ↗</li>
+      </ul>
+
+      <h3 class="font-semibold mb-3">About Us</h3>
+      <ul class="space-y-1">
+        <li>Company Info</li>
+        <li>Business Area</li>
+        <li>Brand Identity</li>
+        <li>Careers</li>
+        <li>Investor Relations ↗</li>
+        <li>Newsroom ↗</li>
+        <li>Ethics</li>
+        <li>Samsung Design ↗</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- Slider Script -->
+<script>
+  const slides = document.querySelectorAll('.slider-img');
+  const nextBtn = document.getElementById('next');
+  const prevBtn = document.getElementById('prev');
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('opacity-100', idx === i);
+      slide.classList.toggle('opacity-0', idx !== i);
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  });
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 3000);
+
+  // Hamburger menu toggle
+  const toggleBtn = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+</body>
+</html>

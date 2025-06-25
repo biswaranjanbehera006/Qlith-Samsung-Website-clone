@@ -6,54 +6,212 @@
   <title>Samsung India | Galaxy S25 Ultra</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
+   <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src=""></script>
+<script>
 
+  // Mobile hamburger
+  function toggleMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    if (menu) menu.classList.toggle("hidden");
+  }
+
+  // Desktop profile dropdown
+  function toggleProfileMenu() {
+    const dropdown = document.getElementById("profileDropdown");
+    if (dropdown) dropdown.classList.toggle("hidden");
+  }
+
+ // SHOP panel toggle (Mega menu)
+document.addEventListener("DOMContentLoaded", () => {
+  const username = localStorage.getItem("loggedInUser") || "User";
+  const profileName = document.getElementById("profileName");
+  const mobileUser = document.getElementById("mobileUser");
+  if (profileName) profileName.textContent = username;
+  if (mobileUser) mobileUser.textContent = username;
+
+  // ✅ Update cart count using username-based cart
+  function updateCartCount() {
+    if (!username || username === "User") return;
+    const cartKey = `cartItems_${username}`;
+    const cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
+    const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+    const cartCountEl = document.getElementById("cartCount");
+    if (cartCountEl) {
+      if (totalQuantity > 0) {
+        cartCountEl.textContent = totalQuantity;
+        cartCountEl.classList.remove("hidden");
+      } else {
+        cartCountEl.textContent = "0";
+        cartCountEl.classList.add("hidden");
+      }
+    }
+  }
+
+  // Initial update
+  updateCartCount();
+
+  // 🔁 Optional: make it globally callable (for other pages or scripts like refrigerators.js)
+  window.updateCartCount = updateCartCount;
+
+  // Shop mega menu toggle
+  const shopToggle = document.getElementById('shopToggle');
+  const megaMenu = document.getElementById('megaMenu');
+
+  if (shopToggle && megaMenu) {
+    shopToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      megaMenu.classList.toggle('hidden');
+    });
+
+    // Close mega menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!shopToggle.contains(e.target) && !megaMenu.contains(e.target)) {
+        megaMenu.classList.add('hidden');
+      }
+    });
+  }
+});
+
+
+  // Logout handler
+  function logout() {
+    localStorage.setItem("loggedIn", "false");
+    localStorage.removeItem("loggedInUser");
+    window.location.reload();
+  }
+</script>
+
+
+</head>
+<body class="m-0 p-0">
+
+<<!-- Navbar -->
 <!-- Navbar -->
-<nav class="navbar">
-  <div class="navbar-content">
-    <div class="nav-left">
-      <h1 class="brand-text">SAMSUNG</h1>
-      <a href="#" id="shopToggle" class="shop-link">Shop</a>
+<!-- Navbar -->
+<nav class="navbar px-3 py-2 bg-white text-black shadow-sm">
+  <div class="flex items-center justify-between w-full">
+
+    <!-- Left: Logo + Shop -->
+    <div class="flex items-center space-x-4">
+      <a href="index.html">
+        <img src="https://www.samsung.com/in/web/dist/img/gnb-mobile-240x64.103c8c2.png" alt="Samsung Logo" class="h-6 md:h-8 object-contain" />
+      </a>
+      <a href="#" id="shopToggle" class="relative font-semibold hover:text-gray-600">Shop</a>
     </div>
 
-    <!-- Right Icons -->
-    <div class="nav-right">
-      <div class="search-box">
-        <input type="text" placeholder="Search" />
-      </div>
-      <!-- Cart Icon wrapped with anchor -->
-<a href="cart.html" title="View Cart">
-  <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
-    <path d="M6 6h15l-1.5 9h-13z" />
-    <circle cx="9" cy="20" r="1" />
-    <circle cx="18" cy="20" r="1" />
-  </svg>
-</a>
+    <!-- Right: Search, Cart, Profile (Laptop), Hamburger (Mobile) -->
+    <div class="flex items-center space-x-4">
+      <!-- Search -->
+      <input type="text" placeholder="Search"
+        class="px-3 py-1 rounded-full bg-black bg-opacity-5 backdrop-blur-md text-black placeholder-black outline-none border border-black border-opacity-20 w-32 md:w-40 text-sm hidden md:block" />
 
-<!-- Profile/User Icon wrapped with anchor -->
-<a href="login.html" title="User Profile">
-  <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
-    <circle cx="12" cy="8" r="4" />
-    <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
-  </svg>
-</a>
+      <!-- Cart -->
+      <a href="cart.html" title="View Cart" class="relative">
+        <svg class="w-5 h-5" fill="none" stroke="black" stroke-width="1.8" viewBox="0 0 24 24">
+          <path d="M6 6h15l-1.5 9h-13z" />
+          <circle cx="9" cy="20" r="1" />
+          <circle cx="18" cy="20" r="1" />
+        </svg>
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
+      </a>
+
+      <!-- Profile Icon (Desktop only) -->
+      <div class="relative hidden md:block">
+        <button onclick="toggleProfileMenu()" title="User Profile" class="focus:outline-none">
+          <svg class="w-5 h-5" fill="none" stroke="black" stroke-width="1.8" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+          </svg>
+        </button>
+
+        <!-- Dropdown -->
+        <div id="profileDropdown"
+          class="absolute right-0 mt-3 w-52 bg-white text-gray-900 rounded-lg shadow-lg hidden z-50 p-3 text-sm">
+          <p class="font-semibold mb-2">Hello, <span id="profileName">User</span></p>
+          <hr class="mb-2">
+          <ul class="space-y-2">
+            <li><a href="#">My Page</a></li>
+            <li><a href="order.html">Orders</a></li>
+            <li><a href="#">Wishlist</a></li>
+            <li><a href="#">Smart Club</a></li>
+            <li><a href="#">Service Center</a></li>
+            <li><button onclick="logout()" class="text-red-500 hover:underline">Log Out</button></li>
+            <li><a href="login.html" class="text-blue-600 hover:underline">Sign In</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hamburger (Mobile only) -->
+      <button onclick="toggleMobileMenu()" class="md:hidden focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" class="w-7 h-7 text-black">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
   </div>
+</nav>
 
-  <!-- Shop Dropdown -->
-  <div id="shopPanel" class="shop-panel">
-    <div class="shop-panel-content">
-      <ul class="shop-items">
-        <li><a href="mobile_Sec.html"><img src="images/Mobiles.png" alt="Mobile"><span>Mobile</span></a></li>
-        <li><a href="tab.html"><img src="images/Tabs.png" alt="Tabs"><span>Tabs</span></a></li>
-        <li><a href="watch.html"><img src="images/SmartWatch.png" alt="Smartwatch"><span>Smartwatch</span></a></li>
-        <li><a href="laptop.html"><img src="images/Laptop.png" alt="Laptops"><span>Laptops</span></a></li>
-        <li><a href="refrigrator.html"><img src="images/Refrigerator.png" alt="Refrigerator"><span>Refrigerator</span></a></li>
-        <li><a href="burds.html"><img src="images/Buds.png" alt="Buds"><span>Buds</span></a></li>
-      </ul>
-    </div>
+<!-- Mobile Menu (below navbar) -->
+<div id="mobileMenu" class="md:hidden hidden bg-white text-black w-full px-6 py-4 space-y-3 z-50 shadow-lg">
+  <p class="font-semibold text-gray-800">Hello, <span id="mobileUser">User</span></p>
+  <ul class="space-y-2 text-sm font-medium">
+    <li><a href="#">My Page</a></li>
+    <li><a href="order.html">Orders</a></li>
+    <li><a href="#">Wishlist</a></li>
+    <li><a href="#">Smart Club</a></li>
+    <li><a href="#">Service Center</a></li>
+    <li><button onclick="logout()" class="text-red-500 hover:underline">Log Out</button></li>
+    <li><a href="login.html" class="text-blue-600 hover:underline">Sign In</a></li>
+  </ul>
+</div>
+
+
+
+  <!-- Responsive Right Content (Mobile Menu) -->
+<!-- Mega Menu -->
+<div id="megaMenu" class="hidden absolute left-0 right-0 bg-white text-black shadow-xl z-50 py-6 px-4 sm:px-6 md:px-10 mt-4 mx-auto max-w-7xl rounded-lg">
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
+    
+    <a href="mobile_Sec.html" class="hover:scale-105 transition">
+      <img src="images/Mobiles.png" class="w-20 h-20 sm:w-24 sm:h-24 mx-auto">
+      <span class="block mt-2 font-medium text-sm sm:text-base">Mobile</span>
+    </a>
+    
+    <a href="tab.html" class="hover:scale-105 transition">
+      <img src="images/Tabs.png" class="w-20 h-20 sm:w-24 sm:h-24 mx-auto">
+      <span class="block mt-2 font-medium text-sm sm:text-base">Tabs</span>
+    </a>
+    
+    <a href="watch.html" class="hover:scale-105 transition">
+      <img src="images/SmartWatch.png" class="w-20 h-20 sm:w-24 sm:h-24 mx-auto">
+      <span class="block mt-2 font-medium text-sm sm:text-base">Smartwatch</span>
+    </a>
+    
+    <a href="laptop.html" class="hover:scale-105 transition">
+      <img src="images/Laptop.png" class="w-20 h-20 sm:w-24 sm:h-24 mx-auto">
+      <span class="block mt-2 font-medium text-sm sm:text-base">Laptops</span>
+    </a>
+    
+    <a href="refrigrator.html" class="hover:scale-105 transition">
+      <img src="images/Refrigerator.png" class="w-20 h-20 sm:w-24 sm:h-24 mx-auto">
+      <span class="block mt-2 font-medium text-sm sm:text-base">Refrigerator</span>
+    </a>
+    
+   <a href="burds.html" class="hover:scale-105 transition">
+  <img src="images/Buds.png" class="w-20 h-20 sm:w-24 sm:h-24 mx-auto">
+  <span class="block mt-2 font-medium text-sm sm:text-base">Buds</span>
+</a>
+
+  </div>
+</div>
+
+
+</div>
   </div>
 </nav>
 
@@ -67,7 +225,7 @@
     <h1>Galaxy S25 Ultra</h1>
     <h2>Galaxy AI ✨</h2>
     <div class="buttons">
-      <a href="#" class="btn">Learn more</a>
+      <a href="s25ultra_learmore.html" class="btn">Learn more</a>
       <a href="mobile_Sec.html" class="btn">Buy</a>
     </div>
   </div>
@@ -81,7 +239,7 @@
   <div class="flex flex-col md:hidden px-6 py-10 bg-white text-black">
     <!-- Text -->
     <div class="mb-6">
-      <h1 class="text-4xl font-bold mb-3">Galaxy S25 | S25+</h1>
+      <h1 class="text-4xl font-bold mb-3">Galaxy S25 Edge</h1>
       <h2 class="text-2xl mb-4 flex items-center font-medium">
         Galaxy AI
         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -117,15 +275,13 @@
           </svg>
         </h2>
         <div class="flex gap-4 flex-wrap mt-4">
-          <a href="#" class="px-6 py-2 border border-black rounded-full font-medium hover:bg-black hover:text-white transition">Learn more</a>
-          <a href="#" class="px-6 py-2 border border-black rounded-full font-medium hover:bg-black hover:text-white transition">Buy</a>
+          <a href="s25edge.html" class="px-6 py-2 border border-black rounded-full font-medium hover:bg-black hover:text-white transition">Learn more</a>
+          <a href="mobile_Sec.html" class="px-6 py-2 border border-black rounded-full font-medium hover:bg-black hover:text-white transition">Buy</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
 
 <!-- Product Showcase -->
 <section class="product-showcase">
@@ -367,53 +523,62 @@
   </div>
 </section>
 
-<!-- Explore the Stories Section -->
-  <section class="max-w-screen-xl mx-auto px-4 py-10 bg-white text-black font-sans">
-    <h2 class="text-3xl font-bold mb-8">Explore the Stories</h2>
+<section class="bg-white ">
+<!- <div class="max-w-screen-xl mx-auto px-4 py-10">
+      <h2 class="text-4xl font-bold mb-8 ml-14 text-black">Explore the Stories</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-      <!-- Story 1 -->
-      <a href="https://www.samsung.com/in/explore/brand/explore-how-our-ai-empowers-you/" target="_blank"
-        class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
-        <img src="images/AIpowered.jpg" alt="AI Empowers"
-          class="rounded-lg mx-auto mb-3 w-full object-cover" />
-        <p class="text-sm font-medium">Explore how our AI empowers you</p>
-      </a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <!-- Story 1 -->
+        <a href="#" target="_blank" class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+          <img
+            src="images/AIpowered.jpg"
+            alt="AI Empowers"
+            class="rounded-lg mx-auto mb-3"
+          />
+          <p class="text-sm font-medium">Explore how our AI empowers you</p>
+        </a>
 
-      <!-- Story 2 -->
-      <a href="https://www.samsung.com/in/explore/brand/see-whats-possible-with-the-new-one-ui/" target="_blank"
-        class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
-        <img src="images/oneUI.jpg" alt="One UI"
-          class="bg-gray-100 p-6 rounded-lg mx-auto mb-3 w-full object-cover" />
-        <p class="text-sm font-medium">See what's possible with the new One UI</p>
-      </a>
+        <!-- Story 2 -->
+        <a href="#" target="_blank" class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+          <img
+            src="images/oneUI.jpg"
+            alt="One UI"
+            class="bg-gray-100 p-6 rounded-lg mx-auto mb-3"
+          />
+          <p class="text-sm font-medium">See what's possible with the new One UI</p>
+        </a>
 
-      <!-- Story 3 -->
-      <a href="https://www.samsung.com/in/explore/brand/discover-how-smartthings-got-smarter/" target="_blank"
-        class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
-        <img src="images/Sthings.jpg" alt="SmartThings"
-          class="bg-gray-100 p-6 rounded-lg mx-auto mb-3 w-full object-cover" />
-        <p class="text-sm font-medium">Discover how SmartThings got smarter</p>
-      </a>
+        <!-- Story 3 -->
+        <a href="#" target="_blank" class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+          <img
+            src="images/Sthings.jpg"
+            alt="SmartThings"
+            class="bg-gray-100 p-6 rounded-lg mx-auto mb-3"
+          />
+          <p class="text-sm font-medium">Discover how SmartThings got smarter</p>
+        </a>
 
-      <!-- Story 4 -->
-      <a href="https://www.samsung.com/in/explore/brand/steps-towards-a-better-future/" target="_blank"
-        class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
-        <img src="images/BetterFuture.jpg" alt="Better Future"
-          class="rounded-lg mx-auto mb-3 w-full object-cover" />
-        <p class="text-sm font-medium">Steps towards to a better future</p>
-      </a>
+        <!-- Story 4 -->
+        <a href="#" target="_blank" class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+          <img
+            src="images/BetterFuture.jpg"
+            alt="Better Future"
+            class="rounded-lg mx-auto mb-3"
+          />
+          <p class="text-sm font-medium">Steps towards to a better future</p>
+        </a>
 
-      <!-- Story 5 -->
-      <a href="https://www.samsung.com/in/explore/brand/let-our-products-ease-your-day/" target="_blank"
-        class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
-        <img src="images/ProEase.jpg" alt="Ease Your Day"
-          class="rounded-lg mx-auto mb-3 w-full object-cover" />
-        <p class="text-sm font-medium">Let our product ease your day</p>
-      </a>
-    </div>
-  </section>
-
+        <!-- Story 5 -->
+        <a href="#" target="_blank" class="group text-center transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+          <img
+            src="images/ProEase.jpg"
+            alt="Ease Your Day"
+            class="rounded-lg mx-auto mb-3"
+          />
+          <p class="text-sm font-medium">Let our product ease your day</p>
+        </a>
+      </div>
+</section>
   <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 text-sm text-gray-800">
     <div class="max-w-screen-xl mx-auto px-4 py-10 flex justify-center">
@@ -555,6 +720,44 @@
       </div>
     </div>
   </footer>
+
+<!-- 
+<script>
+  // Toggle mobile menu
+  function toggleMobileMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+
+  // Toggle profile dropdown
+  function toggleProfileMenu() {
+    document.getElementById("profileDropdown").classList.toggle("hidden");
+  }
+
+  // Log out function
+  function logout() {
+    localStorage.setItem("loggedIn", "false");
+    localStorage.removeItem("loggedInUser");
+    window.location.reload();
+  }
+
+  // On page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const username = localStorage.getItem("loggedInUser") || "User";
+
+    const profileName = document.getElementById("profileName");
+    const mobileUser = document.getElementById("mobileUser");
+    if (profileName) profileName.textContent = username;
+    if (mobileUser) mobileUser.textContent = username;
+
+    // Update cart count
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartCountEl = document.getElementById("cartCount");
+    if (cartItems.length > 0 && cartCountEl) {
+      cartCountEl.textContent = cartItems.length;
+      cartCountEl.classList.remove("hidden");
+    }
+  });
+</script> -->
 
 <script src="script.js"></script>
 </body>

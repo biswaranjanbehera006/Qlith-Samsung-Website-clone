@@ -4,13 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Cart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="cart.css" />
 </head>
 <body>
 
+  
+<!-- Navbar -->
+<nav class="bg-white shadow-md px-4 md:px-8">
+  <div class="max-w-7xl mx-auto flex items-center justify-between h-16">
+    <div class="flex-shrink-0">
+      <a href="index.html">
+      <img src="https://www.samsung.com/in/web/dist/img/gnb-mobile-240x64.103c8c2.png" alt="Samsung Logo" class="h-5 md:h-6">
+   </a> </div>
+    <ul class="hidden md:flex space-x-6 text-black font-medium text-sm">
+      <li class="hover:text-blue-600 cursor-pointer">Shop</li>
+      <li class="hover:text-blue-600 cursor-pointer">Mobile</li>
+      <li class="hover:text-blue-600 cursor-pointer">TV & AV</li>
+      <li class="hover:text-blue-600 cursor-pointer">Appliances</li>
+      <li class="hover:text-blue-600 cursor-pointer">Computing & Displays</li>
+      <li class="hover:text-blue-600 cursor-pointer">Accessories</li>
+    </ul>
+    <div class="md:hidden">
+      <button id="menuToggle">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+    <ul class="space-y-2 text-black font-medium text-sm">
+      <li class="hover:text-blue-600 cursor-pointer">Shop</li>
+      <li class="hover:text-blue-600 cursor-pointer">Mobile</li>
+      <li class="hover:text-blue-600 cursor-pointer">TV & AV</li>
+      <li class="hover:text-blue-600 cursor-pointer">Appliances</li>
+      <li class="hover:text-blue-600 cursor-pointer">Computing & Displays</li>
+      <li class="hover:text-blue-600 cursor-pointer">Accessories</li>
+    </ul>
+  </div>
+</nav>
+
   <div class="cart-header">
     <button class="back-btn" onclick="window.location.href='index.html'">← Home</button>
-    <h2>Your Cart</h2>
+    <h2 class="your_cart">Your Cart</h2>
   </div>
 
   <div id="cartContainer" class="cart-container"></div>
@@ -43,6 +81,113 @@
       <button class="order-btn" onclick="window.location.href='order.html'">🧾 Order</button>
     </div>
   </div>
+
+
+
+<footer class="bg-white border-t border-gray-200 text-gray-800 text-sm mt-10">
+  <div class="max-w-screen-xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+    
+    <!-- Product & Service -->
+    <div>
+      <h3 class="font-semibold mb-3">Product & Service</h3>
+      <ul class="space-y-1">
+        <li>Smartphones</li>
+        <li>Tablets</li>
+        <li>Audio Sound</li>
+        <li>Watches</li>
+        <li>Smart Switch</li>
+        <li>Mobile Accessories</li>
+        <li>TVs</li>
+        <li>Sound Devices</li>
+        <li>Refrigerators</li>
+        <li>Laundry</li>
+        <li>Air Solutions</li>
+        <li>Cooking Appliances</li>
+        <li>Monitors</li>
+        <li>Memory Storage</li>
+      </ul>
+    </div>
+
+    <!-- Shop -->
+    <div>
+      <h3 class="font-semibold mb-3">Shop</h3>
+      <ul class="space-y-1">
+        <li>FAQs</li>
+        <li>Contact Us</li>
+        <li>Welcome Voucher</li>
+        <li>Samsung Referral Advantage</li>
+        <li>Samsung Student Advantage</li>
+        <li>Defence Purchase Program</li>
+        <li>Corporate Employee Program</li>
+        <li>Corporate Bulk Purchase</li>
+        <li>Samsung Experience Store</li>
+        <li>Store Locator</li>
+        <li>Smart Club</li>
+        <li>Terms of Use</li>
+        <li>Order Grievance Redressal</li>
+        <li>Explore</li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div>
+      <h3 class="font-semibold mb-3">Support</h3>
+      <ul class="space-y-1">
+        <li>WhatsApp Us ↗</li>
+        <li>Sign Language ↗</li>
+        <li>Email Us ↗</li>
+        <li>Call Us</li>
+        <li>Email the CEO</li>
+        <li>Community ↗</li>
+        <li>Product Registration</li>
+        <li>Track Repair</li>
+        <li>Service Centre</li>
+        <li>Share Your Opinion</li>
+        <li>Chat with us ↗</li>
+      </ul>
+    </div>
+
+    <!-- Account & Community -->
+    <div>
+      <h3 class="font-semibold mb-3">Account & Community</h3>
+      <ul class="space-y-1">
+        <li>My Page</li>
+        <li>My Products</li>
+        <li>Orders</li>
+        <li>Wishlist</li>
+        <li>Vouchers</li>
+        <li>My Referrals</li>
+        <li>Service</li>
+        <li>Community</li>
+      </ul>
+    </div>
+
+    <!-- Sustainability & About Us -->
+    <div>
+      <h3 class="font-semibold mb-3">Sustainability</h3>
+      <ul class="space-y-1 mb-6">
+        <li>Environment</li>
+        <li>Security & Privacy</li>
+        <li>Accessibility</li>
+        <li>Diversity · Equity · Inclusion</li>
+        <li>Corporate Citizenship ↗</li>
+        <li>Corporate Sustainability ↗</li>
+      </ul>
+
+      <h3 class="font-semibold mb-3">About Us</h3>
+      <ul class="space-y-1">
+        <li>Company Info</li>
+        <li>Business Area</li>
+        <li>Brand Identity</li>
+        <li>Careers</li>
+        <li>Investor Relations ↗</li>
+        <li>Newsroom ↗</li>
+        <li>Ethics</li>
+        <li>Samsung Design ↗</li>
+      </ul>
+    </div>
+  </div>
+</footer>
 
   <script src="cart.js"></script>
 </body>

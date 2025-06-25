@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galaxy S25 Ultra</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+     <nav class="bg-white shadow-md px-4 md:px-8">
+      <div class="max-w-7xl mx-auto flex items-center justify-between h-16">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html">
+          <img src="https://www.samsung.com/in/web/dist/img/gnb-mobile-240x64.103c8c2.png" alt="Samsung Logo" class="h-5 md:h-6">
+        </a></div>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 text-black font-medium text-sm">
+          <li class="hover:text-blue-600 cursor-pointer">Shop</li>
+          <li class="hover:text-blue-600 cursor-pointer">Mobile</li>
+          <li class="hover:text-blue-600 cursor-pointer">TV & AV</li>
+          <li class="hover:text-blue-600 cursor-pointer">Appliances</li>
+          <li class="hover:text-blue-600 cursor-pointer">Computing & Displays</li>
+          <li class="hover:text-blue-600 cursor-pointer">Accessories</li>
+        </ul>
+
+        <!-- Hamburger -->
+        <div class="md:hidden">
+          <button id="menuToggle" class="focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+        <ul class="space-y-2 text-black font-medium text-sm">
+          <li class="hover:text-blue-600 cursor-pointer">Shop</li>
+          <li class="hover:text-blue-600 cursor-pointer">Mobile</li>
+          <li class="hover:text-blue-600 cursor-pointer">TV & AV</li>
+          <li class="hover:text-blue-600 cursor-pointer">Appliances</li>
+          <li class="hover:text-blue-600 cursor-pointer">Computing & Displays</li>
+          <li class="hover:text-blue-600 cursor-pointer">Accessories</li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- JS for Hamburger Toggle -->
+    <script>
+      const toggleBtn = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      toggleBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20 py-12 gap-10 bg-white">
+
+  <!-- Left: Image Slider -->
+  <div class="w-full md:w-1/2 relative overflow-hidden rounded-xl shadow-lg">
+    <div class="relative w-full h-[400px] md:h-[500px]">
+      <img class="slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+        src="https://images.samsung.com/is/image/samsung/assets/in/smartphones/galaxy-s25-ultra/buy/S25_Titanium_PDP_720x480.jpg?imbypass=true" />
+      <img class="slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+        src="https://www.samsungmobilepress.com/file/E2D865121417BED4CCCE3AB6288204C6D10F27F744C5DA9475826F3CB5DC71EF261AC479715828213145AFB12DE9D44B464767C4A30B4E584FA0694EC4CE33A95AF3914FF18C9539AD4BDB058282C9FA128C39363B2D1503347D5496C2410128A8340AD04090BD6582AE881B89F5B2257FA7343BBEC5725513CA21B107939A25B9AF41361FF726E729CE0E44560746EC" />
+      <img class="slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+        src="https://www.samsungmobilepress.com/file/A7FB9487B074076C06263FA484D21B74535765D48EE1BBFF7896D96C203A619CE56B677DA4F33C42F917EAA281EFDE400E05CDF1B6F853F604C39A009761EBE5969D8C07978635DB0D809AC0C9610E39665C7E2A232F030B098523238D58C19E6FFE28D8CDB7D629A3FAC508E537815E81C1B19D94FC9D7D4748BB4693B855306CD0FA33B91AE9A89C0C99405C47C369" />
+      <img class="slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+        src="https://www.samsungmobilepress.com/file/77E11CE4DA7792B4D2A0805AEAE52347C24D21E15C7D02B261F7667A9D7162059464541C760A864069C8E5E49D3197BE22F789D404A3F8C59C26590581D4E824A48B1E1F7357789A1D7C6AC2562492D6B73F358FF4FB41E051BBC686F068581F4FF05F14542CA6205A3E6027C27D69A05199E3985E8BB9E820A2D15F6D60B419128ED1CD29BAD30E97F12D3135A1D47B052CDEC4FEC99E8E460441188F659D09" />
+
+      <!-- Navigation Buttons -->
+      <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white text-gray-700 p-3 rounded-full shadow hover:bg-gray-200 transition">
+        <i class="fas fa-chevron-left text-xl"></i>
+      </button>
+      <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white text-gray-700 p-3 rounded-full shadow hover:bg-gray-200 transition">
+        <i class="fas fa-chevron-right text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Right: Product Info -->
+  <div class="w-full md:w-1/2 space-y-6">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Galaxy S25 Ultra</h1>
+    <p class="text-gray-700 text-lg leading-relaxed">
+      Experience the next generation of innovation with the Galaxy S25 Ultra. Featuring a titanium frame, AI-enhanced performance, and a quad-lens 200MP camera system.
+    </p>
+
+    <!-- Specs -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-800 text-base">
+      <div class="flex items-center gap-3"><i class="fas fa-mobile-screen-button text-blue-600"></i> 6.9" AMOLED 2X</div>
+      <div class="flex items-center gap-3"><i class="fas fa-microchip text-blue-600"></i> Snapdragon 8 Gen 4</div>
+      <div class="flex items-center gap-3"><i class="fas fa-camera text-blue-600"></i> 200MP Quad Camera</div>
+      <div class="flex items-center gap-3"><i class="fas fa-battery-three-quarters text-blue-600"></i> 5100mAh, 65W Charging</div>
+      <div class="flex items-center gap-3"><i class="fas fa-memory text-blue-600"></i> 12GB RAM + 1TB Storage</div>
+      <div class="flex items-center gap-3"><i class="fas fa-fingerprint text-blue-600"></i> Ultrasonic Fingerprint</div>
+    </div>
+
+    <!-- Price + Buy Button -->
+    <div class="text-3xl font-bold text-gray-900 mt-4">
+      ₹129,999 <span class="text-xl text-gray-500 line-through ml-3">₹139,999</span>
+    </div>
+
+    <a href="mobile_Sec.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition">
+      <i class="fas fa-cart-shopping mr-2"></i> Buy Now
+    </a>
+  </div>
+</section>
+
+<!-- Detail Features Section -->
+<section class="px-6 md:px-20 py-10 space-y-12 bg-gray-50">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <div class="p-6 border rounded-xl shadow hover:shadow-md transition bg-white">
+      <i class="fas fa-star text-yellow-400 text-3xl mb-2"></i>
+      <h3 class="text-xl font-semibold mb-2">Pro Camera System</h3>
+      <p class="text-gray-600">Capture stunning 8K videos and detailed 200MP shots with AI-enhanced night mode.</p>
+    </div>
+    <div class="p-6 border rounded-xl shadow hover:shadow-md transition bg-white">
+      <i class="fas fa-brain text-purple-600 text-3xl mb-2"></i>
+      <h3 class="text-xl font-semibold mb-2">AI-Powered Experience</h3>
+      <p class="text-gray-600">Real-time translations, enhanced photo editing, and intelligent battery management.</p>
+    </div>
+    <div class="p-6 border rounded-xl shadow hover:shadow-md transition bg-white">
+      <i class="fas fa-shield-alt text-green-600 text-3xl mb-2"></i>
+      <h3 class="text-xl font-semibold mb-2">Defense-Grade Security</h3>
+      <p class="text-gray-600">Samsung Knox Vault ensures protection from the chip up with biometric safeguards.</p>
+    </div>
+  </div>
+
+  <div class="bg-blue-100 p-6 rounded-xl text-center space-y-4">
+    <h2 class="text-2xl font-bold text-blue-800">Exclusive Launch Offers</h2>
+    <p class="text-gray-700">🎁 ₹10,000 Cashback · 💳 No-Cost EMI · 🔁 ₹12,000 Exchange Bonus · 🎧 Free Galaxy Buds</p>
+  </div>
+
+  <div class="text-center">
+    <h2 class="text-xl font-semibold text-gray-800 mb-2">Available Colors</h2>
+    <p class="text-gray-600">Titanium Black · Sky Blue · Burgundy Red · Phantom White</p>
+  </div>
+</section>
+
+
+
+
+<footer class="bg-white border-t border-gray-200 text-gray-800 text-sm">
+  <div class="max-w-screen-xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+    
+    <!-- Product & Service -->
+    <div>
+      <h3 class="font-semibold mb-3">Product & Service</h3>
+      <ul class="space-y-1">
+        <li>Smartphones</li>
+        <li>Tablets</li>
+        <li>Audio Sound</li>
+        <li>Watches</li>
+        <li>Smart Switch</li>
+        <li>Mobile Accessories</li>
+        <li>TVs</li>
+        <li>Sound Devices</li>
+        <li>Refrigerators</li>
+        <li>Laundry</li>
+        <li>Air Solutions</li>
+        <li>Cooking Appliances</li>
+        <li>Monitors</li>
+        <li>Memory Storage</li>
+      </ul>
+    </div>
+
+    <!-- Shop -->
+    <div>
+      <h3 class="font-semibold mb-3">Shop</h3>
+      <ul class="space-y-1">
+        <li>FAQs</li>
+        <li>Contact Us</li>
+        <li>Welcome Voucher</li>
+        <li>Samsung Referral Advantage</li>
+        <li>Samsung Student Advantage</li>
+        <li>Defence Purchase Program</li>
+        <li>Corporate Employee Program</li>
+        <li>Corporate Bulk Purchase</li>
+        <li>Samsung Experience Store</li>
+        <li>Store Locator</li>
+        <li>Smart Club</li>
+        <li>Terms of Use</li>
+        <li>Order Grievance Redressal</li>
+        <li>Explore</li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div>
+      <h3 class="font-semibold mb-3">Support</h3>
+      <ul class="space-y-1">
+        <li>WhatsApp Us ↗</li>
+        <li>Sign Language ↗</li>
+        <li>Email Us ↗</li>
+        <li>Call Us</li>
+        <li>Email the CEO</li>
+        <li>Community ↗</li>
+        <li>Product Registration</li>
+        <li>Track Repair</li>
+        <li>Service Centre</li>
+        <li>Share Your Opinion</li>
+        <li>Chat with us ↗</li>
+      </ul>
+    </div>
+
+    <!-- Account & Community -->
+    <div>
+      <h3 class="font-semibold mb-3">Account & Community</h3>
+      <ul class="space-y-1">
+        <li>My Page</li>
+        <li>My Products</li>
+        <li>Orders</li>
+        <li>Wishlist</li>
+        <li>Vouchers</li>
+        <li>My Referrals</li>
+        <li>Service</li>
+        <li>Community</li>
+      </ul>
+    </div>
+
+    <!-- Sustainability & About Us -->
+    <div>
+      <h3 class="font-semibold mb-3">Sustainability</h3>
+      <ul class="space-y-1 mb-6">
+        <li>Environment</li>
+        <li>Security & Privacy</li>
+        <li>Accessibility</li>
+        <li>Diversity · Equity · Inclusion</li>
+        <li>Corporate Citizenship ↗</li>
+        <li>Corporate Sustainability ↗</li>
+      </ul>
+
+      <h3 class="font-semibold mb-3">About Us</h3>
+      <ul class="space-y-1">
+        <li>Company Info</li>
+        <li>Business Area</li>
+        <li>Brand Identity</li>
+        <li>Careers</li>
+        <li>Investor Relations ↗</li>
+        <li>Newsroom ↗</li>
+        <li>Ethics</li>
+        <li>Samsung Design ↗</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript: Auto + Manual Slider -->
+<script>
+  const slides = document.querySelectorAll('.slider-img');
+  const nextBtn = document.getElementById('next');
+  const prevBtn = document.getElementById('prev');
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('opacity-100', idx === i);
+      slide.classList.toggle('opacity-0', idx !== i);
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  });
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 3000);
+</script>
+
+</body>
+</html>

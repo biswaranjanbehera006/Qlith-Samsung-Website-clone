@@ -1,11 +1,11 @@
 function showPopup(id) {
   const popup = document.getElementById(id);
-  popup.classList.remove("hidden");        // Show the popup
-  popup.classList.add("flex");             // Use flex for layout (centered)
+  popup.classList.remove("hidden");
+  popup.classList.add("flex");
   setTimeout(() => {
-    popup.classList.remove("flex");        // Hide again after 2 seconds
+    popup.classList.remove("flex");
     popup.classList.add("hidden");
-  }, 2000);
+  }, 500);
 }
 
 function confirmOrder() {
@@ -24,7 +24,24 @@ function confirmOrder() {
     return;
   }
 
+  // ✅ Show success popup
   showPopup("popupMessage");
+
+  // ✅ Clear user's cart from localStorage
+  const username = localStorage.getItem("loggedInUser");
+  if (username) {
+    const cartKey = `cartItems_${username}`;
+    localStorage.removeItem(cartKey);
+    console.log(`✅ Cleared cart: ${cartKey}`);
+  }
+
+  // ✅ Reset cart count badge
+  const cartCountElem = document.getElementById("cartCount");
+  if (cartCountElem) {
+    cartCountElem.textContent = "0";
+    cartCountElem.classList.add("hidden");
+    console.log("✅ Cart badge reset");
+  }
 }
 
 function viewSummary() {
@@ -43,7 +60,8 @@ function viewSummary() {
     return;
   }
 
-  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const username = localStorage.getItem("loggedInUser");
+  const cartItems = JSON.parse(localStorage.getItem(`cartItems_${username}`)) || [];
   let total = 0;
   let itemsHTML = '';
 

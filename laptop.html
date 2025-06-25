@@ -2,274 +2,249 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samsung Laptops</title>
-  <link rel="stylesheet" href="refrigerators.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { scroll-behavior: smooth; }
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out both; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body>
-  <header class="refrigerator-header">
-    <input type="text" id="searchInput" class="refrigerator-search" placeholder="🔍 Search here..."/>
-     <select id="sortSelect" class="sort-dropdown">
-      <option value="">Sort by Price</option>
-      <option value="low">Low to High</option>
-      <option value="high">High to Low</option>
-    </select>
-    <a href="cart.html" class="cart-link">🛒 Cart</a>
-  </header>
+<body class="bg-gradient-to-b from-white to-gray-100 text-gray-800">
 
-  <section class="refrigerator-container" id="refrigeratorList">
-    <!-- Example Product Card -->
-    <div class="refrigerator-card">
-      <img src="images/laptop_Book5 Pro.avif" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Book5 Pro</h3>
-      <div class="refrigerator-rating">⭐ 4.9 (320 reviews)</div>
-      <div class="refrigerator-color">Color: Arctic Silver</div>
-      <div class="refrigerator-capacity">35.56 cm,Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹158990</span>
-        <span class="refrigerator-old">₹175990</span>
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md">
+  <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-4">
+    <a href="index.html" class="flex-shrink-0">
+      <img src="https://www.samsung.com/in/web/dist/img/gnb-mobile-240x64.103c8c2.png" alt="Samsung Logo" class="h-6 md:h-8">
+    </a>
+
+    <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mt-4 sm:mt-0">
+      <input type="text" id="searchInput" placeholder="🔍 Search here..." class="px-3 py-2 border border-gray-300 rounded-lg text-sm w-full sm:w-60">
+      <select id="sortSelect" class="border border-gray-300 px-3 py-2 rounded-lg text-sm w-full sm:w-44">
+        <option value="">Sort by Price</option>
+        <option value="low">Low to High</option>
+        <option value="high">High to Low</option>
+      </select>
+      <a href="cart.html" class="relative" id="cartIconLink">
+        <i class="fas fa-shopping-cart text-2xl text-gray-800"></i>
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Product Grid -->
+<main class="max-w-7xl mx-auto px-4 py-8 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+  <!-- Example Laptop Card -->
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden animate-fade-in-up">
+    <img src="images/laptop_Book5 Pro.avif" alt="Galaxy Book5 Pro" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold">Galaxy Book5 Pro</h3>
+      <p class="text-sm">⭐ 4.9 (320 reviews)</p>
+      <p class="text-xs text-gray-600">Color: Arctic Silver</p>
+      <p class="text-xs">Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</p>
+      <div class="flex items-center space-x-2 text-sm font-medium mt-2">
+        <span class="refrigerator-new text-blue-600">₹158,990</span>
+        <span class="line-through text-gray-500">₹175,990</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="mt-4 flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white px-4 py-1.5 rounded hover:bg-gray-800">🛒 Add</button>
+        <button class="border px-4 py-1.5 rounded hover:bg-gray-100">Learn more</button>
       </div>
     </div>
+  </div>
 
-
-
-    <div class="refrigerator-card">
-      <img src="images/book 4.webp" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Book4 Pro</h3>
-      <div class="refrigerator-rating">⭐ 4.2 (720 reviews)</div>
-      <div class="refrigerator-color">Color: Black</div>
-      <div class="refrigerator-capacity">35.56 cm, Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics
-
-512 GB</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹ 111990</span>
-        <span class="refrigerator-old">₹ 115990</span>
+<div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden animate-fade-in-up">
+    <img src="images/book 4.webp" alt="Galaxy Book5 Pro" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold">Galaxy Book4 Pro</h3>
+      <p class="text-sm">⭐ 4.9 (320 reviews)</p>
+      <p class="text-xs text-gray-600">Color: Arctic Silver</p>
+      <p class="text-xs">Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</p>
+      <div class="flex items-center space-x-2 text-sm font-medium mt-2">
+        <span class="refrigerator-new text-blue-600">₹158,990</span>
+        <span class="line-through text-gray-500">₹175,990</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="mt-4 flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white px-4 py-1.5 rounded hover:bg-gray-800">🛒 Add</button>
+        <button class="border px-4 py-1.5 rounded hover:bg-gray-100">Learn more</button>
       </div>
     </div>
+  </div>
 
-
-
-
-    <div class="refrigerator-card">
-      <img src="images/book3.avif" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Book3 </h3>
-      <div class="refrigerator-rating">⭐ 3.8 (320 reviews)</div>
-      <div class="refrigerator-color">Color: Arctic black</div>
-      <div class="refrigerator-capacity">Galaxy Book3 360, 39.62cm (15.6"), i5, 16GB, Intel Xe Graphics</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹ 109990</span>
-        <span class="refrigerator-old">₹ 124990</span>
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden animate-fade-in-up">
+    <img src="images/book3.avif" alt="Galaxy Book5 Pro" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold">Galaxy Book3</h3>
+      <p class="text-sm">⭐ 4.9 (320 reviews)</p>
+      <p class="text-xs text-gray-600">Color: Arctic Silver</p>
+      <p class="text-xs">Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</p>
+      <div class="flex items-center space-x-2 text-sm font-medium mt-2">
+        <span class="refrigerator-new text-blue-600">₹158,990</span>
+        <span class="line-through text-gray-500">₹175,990</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
-    </div>
-
-
-
-
-    <div class="refrigerator-card">
-      <img src="images/book 1.webp" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">>Galaxy Book3</h3>
-      <div class="refrigerator-rating">⭐ 4.3 (320 reviews)</div>
-      <div class="refrigerator-color">Color: Arctic black</div>
-      <div class="refrigerator-capacity">Galaxy Book3 360, 39.62cm (15.6"), i3, 8GB, Intel Xe Graphics</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹90999</span>
-        <span class="refrigerator-old">₹120999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="mt-4 flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white px-4 py-1.5 rounded hover:bg-gray-800">🛒 Add</button>
+        <button class="border px-4 py-1.5 rounded hover:bg-gray-100">Learn more</button>
       </div>
     </div>
+  </div>
 
 
-
-    <div class="refrigerator-card">
-      <img src="images/book 3 360.avif" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Book3 360</h3>
-      <div class="refrigerator-rating">⭐ 4.8 (320 reviews)</div>
-      <div class="refrigerator-color">Color: Arctic Silver</div>
-      <div class="refrigerator-capacity">33.78 cm, i7, 16 GB, Intel Xe Graphics</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹154999</span>
-        <span class="refrigerator-old">₹162999</span>
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden animate-fade-in-up">
+    <img src="images/book 1.webp" alt="Galaxy Book5 Pro" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold">Galaxy Book1</h3>
+      <p class="text-sm">⭐ 4.9 (320 reviews)</p>
+      <p class="text-xs text-gray-600">Color: Arctic Silver</p>
+      <p class="text-xs">Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</p>
+      <div class="flex items-center space-x-2 text-sm font-medium mt-2">
+        <span class="refrigerator-new text-blue-600">₹158,990</span>
+        <span class="line-through text-gray-500">₹175,990</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
-    </div>
-
-
-
-
-
-    <div class="refrigerator-card">
-      <img src="images/book 5 360.webp" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Book5 Pro 360</h3>
-      <div class="refrigerator-rating">⭐ 4.8 (320 reviews)</div>
-      <div class="refrigerator-color">Color: Arctic Silver</div>
-      <div class="refrigerator-capacity">35.56 cm,Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹134999</span>
-        <span class="refrigerator-old">₹152999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="mt-4 flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white px-4 py-1.5 rounded hover:bg-gray-800">🛒 Add</button>
+        <button class="border px-4 py-1.5 rounded hover:bg-gray-100">Learn more</button>
       </div>
     </div>
+  </div>
 
 
-
-
-    <div class="refrigerator-card">
-      <img src="images/book 4 pro 360.webp" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Book4 Pro 360</h3>
-      <div class="refrigerator-rating">⭐ 4.1 (320 reviews)</div>
-      <div class="refrigerator-color">Color: Arctic Silver</div>
-      <div class="refrigerator-capacity">35.56 cm,Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹154999</span>
-        <span class="refrigerator-old">₹159999</span>
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden animate-fade-in-up">
+    <img src="images/book 3 360.avif" alt="Galaxy Book5 Pro" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold">Galaxy Book3 360</h3>
+      <p class="text-sm">⭐ 4.9 (320 reviews)</p>
+      <p class="text-xs text-gray-600">Color: Arctic Silver</p>
+      <p class="text-xs">Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</p>
+      <div class="flex items-center space-x-2 text-sm font-medium mt-2">
+        <span class="refrigerator-new text-blue-600">₹158,990</span>
+        <span class="line-through text-gray-500">₹175,990</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
-    </div>
-
-
-
-    <div class="refrigerator-card">
-      <img src="images/book 3 fe.webp" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Book3 Pro FE</h3>
-      <div class="refrigerator-rating">⭐ 4.8 (320 reviews)</div>
-      <div class="refrigerator-color">Color: Arctic Silver</div>
-      <div class="refrigerator-capacity">35.56 cm,Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹54999</span>
-        <span class="refrigerator-old">₹62999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="mt-4 flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white px-4 py-1.5 rounded hover:bg-gray-800">🛒 Add</button>
+        <button class="border px-4 py-1.5 rounded hover:bg-gray-100">Learn more</button>
       </div>
     </div>
-
-  </section>
-
+  </div>
 
 
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden animate-fade-in-up">
+    <img src="images/book 5 360.webp" alt="Galaxy Book5 Pro" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold">Galaxy Book5 Pro 360</h3>
+      <p class="text-sm">⭐ 4.9 (320 reviews)</p>
+      <p class="text-xs text-gray-600">Color: Arctic Silver</p>
+      <p class="text-xs">Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</p>
+      <div class="flex items-center space-x-2 text-sm font-medium mt-2">
+        <span class="refrigerator-new text-blue-600">₹158,990</span>
+        <span class="line-through text-gray-500">₹175,990</span>
+      </div>
+      <div class="mt-4 flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white px-4 py-1.5 rounded hover:bg-gray-800">🛒 Add</button>
+        <button class="border px-4 py-1.5 rounded hover:bg-gray-100">Learn more</button>
+      </div>
+    </div>
+  </div>
 
 
-  
-  <!-- footer Section -->
-<section class="footer-navigation">
-  <div class="footer-container">
-    <div class="footer-column">
-      <h4 class="footer-heading">Product & Service</h4>
-      <ul class="footer-links">
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden animate-fade-in-up">
+    <img src="images/book 4 pro 360.webp" alt="Galaxy Book4 Pro 360" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold">Galaxy Book4 Pro 360<</h3>
+      <p class="text-sm">⭐ 4.9 (320 reviews)</p>
+      <p class="text-xs text-gray-600">Color: Arctic Silver</p>
+      <p class="text-xs">Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</p>
+      <div class="flex items-center space-x-2 text-sm font-medium mt-2">
+        <span class="refrigerator-new text-blue-600">₹158,990</span>
+        <span class="line-through text-gray-500">₹175,990</span>
+      </div>
+      <div class="mt-4 flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white px-4 py-1.5 rounded hover:bg-gray-800">🛒 Add</button>
+        <button class="border px-4 py-1.5 rounded hover:bg-gray-100">Learn more</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden animate-fade-in-up">
+    <img src="images/book 3 fe.webp" alt="Galaxy Book5 Pro" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold">Galaxy Book3 Pro FE</h3>
+      <p class="text-sm">⭐ 4.9 (320 reviews)</p>
+      <p class="text-xs text-gray-600">Color: Arctic Silver</p>
+      <p class="text-xs">Core™ Ultra 5, 16 GB, Intel® Arc™ Graphics</p>
+      <div class="flex items-center space-x-2 text-sm font-medium mt-2">
+        <span class="refrigerator-new text-blue-600">₹158,990</span>
+        <span class="line-through text-gray-500">₹175,990</span>
+      </div>
+      <div class="mt-4 flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white px-4 py-1.5 rounded hover:bg-gray-800">🛒 Add</button>
+        <button class="border px-4 py-1.5 rounded hover:bg-gray-100">Learn more</button>
+      </div>
+    </div>
+  </div>
+
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-white border-t mt-12 py-8 text-sm text-gray-600">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+    <div>
+      <h4 class="font-semibold mb-2">Product & Service</h4>
+      <ul class="space-y-1 text-xs">
         <li>Smartphones</li>
         <li>Tablets</li>
         <li>Audio Sound</li>
         <li>Watches</li>
         <li>Smart Switch</li>
-        <li>Mobile Accessories</li>
         <li>TVs</li>
-        <li>Sound Devices</li>
-        <li>Refrigerators</li>
-        <li>Laundry</li>
-        <li>Air Solutions</li>
-        <li>Cooking Appliances</li>
         <li>Monitors</li>
         <li>Memory Storage</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Shop</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">Shop</h4>
+      <ul class="space-y-1 text-xs">
         <li>FAQs</li>
-        <li>Contact Us</li>
         <li>Welcome Voucher</li>
-        <li>Samsung Referral Advantage</li>
-        <li>Samsung Student Advantage</li>
-        <li>Defence Purchase Program</li>
-        <li>Corporate Employee Program</li>
-        <li>Corporate Bulk Purchase</li>
-        <li>Samsung Experience Store</li>
         <li>Store Locator</li>
-        <li>Smart Club</li>
-        <li>Terms of Use</li>
-        <li>Order Grievance Redressal</li>
-        <li>Explore</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Support</h4>
-      <ul class="footer-links">
-        <li>WhatsApp Us</li>
-        <li>Sign Language</li>
-        <li>Email Us</li>
+    <div>
+      <h4 class="font-semibold mb-2">Support</h4>
+      <ul class="space-y-1 text-xs">
         <li>Call Us</li>
-        <li>Email the CEO</li>
-        <li>Community</li>
-        <li>Product Registration</li>
         <li>Track Repair</li>
         <li>Service Centre</li>
-        <li>Share Your Opinion</li>
-        <li>Chat with us</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Account & Community</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">Account & Community</h4>
+      <ul class="space-y-1 text-xs">
         <li>My Page</li>
-        <li>My Products</li>
         <li>Orders</li>
         <li>Wishlist</li>
-        <li>Vouchers</li>
-        <li>My Referrals</li>
-        <li>Service</li>
-        <li>Community</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Sustainability</h4>
-      <ul class="footer-links">
-        <li>Environment</li>
-        <li>Security & Privacy</li>
-        <li>Accessibility</li>
-        <li>Diversity · Equity · Inclusion</li>
-        <li>Corporate Citizenship</li>
-        <li>Corporate Sustainability</li>
-      </ul>
-      <h4 class="footer-heading">About Us</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">About Us</h4>
+      <ul class="space-y-1 text-xs">
         <li>Company Info</li>
-        <li>Business Area</li>
-        <li>Brand Identity</li>
         <li>Careers</li>
-        <li>Investor Relations</li>
         <li>Newsroom</li>
-        <li>Ethics</li>
-        <li>Samsung Design</li>
       </ul>
     </div>
   </div>
-</section>
+</footer>
 
-  <script src="refrigerators.js"></script>
+<script src="refrigerators.js"></script>
 </body>
 </html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white text-gray-900">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Summary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Redirect after 3 seconds
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 4000);
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-white to-gray-100">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html">
+  <img src="https://www.samsung.com/in/web/dist/img/gnb-mobile-240x64.103c8c2.png" alt="Samsung Logo" class="h-6 md:h-8 cursor-pointer">
+</a>
+      <nav class="flex space-x-4 text-sm font-medium text-gray-700">
+        <a href="#" class="hover:text-black transition">Shop</a>
+        <a href="#" class="hover:text-black transition">Mobile</a>
+        <a href="#" class="hover:text-black transition">TV & AV</a>
+        <a href="#" class="hover:text-black hidden md:inline transition">Home Appliances</a>
+        <a href="#" class="hover:text-black hidden md:inline transition">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Order Summary -->
+  <main class="flex-grow flex items-center justify-center px-4 py-10">
+    <div class="bg-white shadow-xl rounded-lg p-8 w-full max-w-md animate-fade-in-up text-center">
+      <h2 class="text-2xl font-bold mb-4 text-green-600">✅ Order Placed Successfully!</h2>
+      <div id="summaryBox" class="text-sm text-gray-700 space-y-2 text-left"></div>
+      <p class="text-center text-gray-500 text-xs mt-4">Redirecting to Home Page...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 text-gray-800 text-sm">
+    <div class="max-w-screen-xl mx-auto px-4 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+      <div>
+        <h3 class="font-semibold mb-3">Product & Service</h3>
+        <ul class="space-y-1 text-xs">
+          <li>Smartphones</li><li>Tablets</li><li>Audio Sound</li><li>Watches</li><li>TVs</li><li>Laundry</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-3">Shop</h3>
+        <ul class="space-y-1 text-xs">
+          <li>FAQs</li><li>Contact Us</li><li>Welcome Voucher</li><li>Store Locator</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-3">Support</h3>
+        <ul class="space-y-1 text-xs">
+          <li>WhatsApp Us</li><li>Email Us</li><li>Call Us</li><li>Chat with us</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-3">My Account</h3>
+        <ul class="space-y-1 text-xs">
+          <li>My Orders</li><li>Wishlist</li><li>Vouchers</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-3">About Us</h3>
+        <ul class="space-y-1 text-xs">
+          <li>Company Info</li><li>Newsroom</li><li>Careers</li><li>Samsung Design</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bottom Strip -->
+  <div class="border-t border-gray-200 text-xs text-gray-600">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 text-center">
+      ⓒ 1995-2025 SAMSUNG All Rights Reserved.
+    </div>
+  </div>
+
+  <!-- Script to show summary -->
+  <script>
+    const order = JSON.parse(localStorage.getItem("latestOrder"));
+    const box = document.getElementById("summaryBox");
+    if (order) {
+      box.innerHTML = `
+        <p><strong>Name:</strong> ${order.name}</p>
+        <p><strong>Mobile:</strong> ${order.mobile}</p>
+        <p><strong>Address:</strong> ${order.house}, ${order.locality}, ${order.city}</p>
+        <p><strong>Landmark:</strong> ${order.landmark || "N/A"}</p>
+        <p><strong>State:</strong> ${order.state}</p>
+        <p><strong>Pin Code:</strong> ${order.pincode}</p>
+        <p><strong>Payment Mode:</strong> ${order.payment}</p>
+      `;
+    }
+  </script>
+
+  <!-- Tailwind Animation -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'fade-in-up': 'fadeInUp 0.5s ease-out both'
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

@@ -2,272 +2,264 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samsung Buds</title>
-  <link rel="stylesheet" href="refrigerators.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { scroll-behavior: smooth; }
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out both; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body>
-  <header class="refrigerator-header">
-    <input type="text" id="searchInput" class="refrigerator-search" placeholder="🔍 Search here..."/>
-     <select id="sortSelect" class="sort-dropdown">
-      <option value="">Sort by Price</option>
-      <option value="low">Low to High</option>
-      <option value="high">High to Low</option>
-    </select>
-    <a href="cart.html" class="cart-link">🛒 Cart</a>
-  </header>
+<body class="bg-gradient-to-b from-white to-gray-100 text-gray-800">
 
-  <section class="refrigerator-container" id="refrigeratorList">
-    
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md">
+  <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-4">
+    <!-- Logo -->
+    <a href="index.html" class="flex-shrink-0">
+      <img src="https://www.samsung.com/in/web/dist/img/gnb-mobile-240x64.103c8c2.png" alt="Samsung Logo" class="h-6 md:h-8">
+    </a>
+
+    <!-- Menu Section -->
+    <div class="w-full sm:w-auto flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mt-4 sm:mt-0">
+      <input id="searchInput" type="text" placeholder="🔍 Search Buds..." class="px-3 py-2 border border-gray-300 rounded-lg text-sm w-full sm:w-60">
+
+      <select id="sortSelect" class="border border-gray-300 px-3 py-2 rounded-lg text-sm w-full sm:w-44">
+        <option value="">Sort by Price</option>
+        <option value="low">Low to High</option>
+        <option value="high">High to Low</option>
+      </select>
+
+      <a href="cart.html" class="relative self-center sm:self-auto">
+        <i class="fas fa-shopping-cart text-2xl text-gray-800"></i>
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+      </a>
+    </div>
+  </div>
+</header>
 
 
-    <div class="refrigerator-card">
-      <img src="images/galaxy burds3 pro.avif" alt="burds3 pro" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Buds3 Pro</h3>
-      <div class="refrigerator-rating">⭐ 4.9 (420 reviews)</div>
-      <div class="refrigerator-color">Color: Arctic Silver</div>
-      <div class="refrigerator-capacity">Battery upto  30 hour</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹19999</span>
-        <span class="refrigerator-old">₹22999</span>
+
+<!-- Buds Cards -->
+<main id="refrigeratorList" class="max-w-7xl mx-auto px-4 py-8 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/galaxy burds3 pro.avif" alt="Galaxy Buds 3 Pro" class="w-full h-48 object-cover">
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold">Galaxy Buds 3 Pro</h3>
+      <p class="text-sm">⭐ 4.7 (920 reviews)</p>
+      <p class="text-xs text-gray-600">Color: Graphite</p>
+      <p class="text-xs">Hi-Fi Sound | ANC</p>
+      <div class="flex items-center space-x-2 text-sm font-medium mt-2">
+        <span class="refrigerator-new text-blue-600">₹15,999</span>
+        <span class="line-through text-gray-500">₹19,999</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="mt-4 flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white px-4 py-1.5 rounded hover:bg-gray-800">🛒 Add</button>
+        <button class="border px-4 py-1.5 rounded hover:bg-gray-100">Learn more</button>
       </div>
     </div>
+  </div>
 
 
 
-    
-    <div class="refrigerator-card">
-      <img src="images/burds2 pro.avif" alt="burds2 pro" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Buds2 Pro</h3>
-      <div class="refrigerator-rating">⭐ 4.1 (420 reviews)</div>
-      <div class="refrigerator-color">Color:  Borapurple</div>
-      <div class="refrigerator-capacity">Battery upto  28 hour</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹17999</span>
-        <span class="refrigerator-old">₹20999</span>
+  
+
+  <!-- Duplicate this card for each product, update content -->
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/burds2 pro.avif" alt="Galaxy Buds2 Pro" class="w-full h-48 object-contain bg-gray-50" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold">Galaxy Buds2 Pro</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.2 (750 reviews)</p>
+      <p class="text-xs text-gray-500">Color: White</p>
+      <p class="text-xs mb-2 text-gray-500">ANC | 6-30 hrs Battery</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹8,999</span>
+        <span class="text-gray-400 line-through text-sm">₹11,999</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
-    </div>
-
-
-
-
-    
-    <div class="refrigerator-card">
-      <img src="images/fe wereless u.jpeg" alt="burds live" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Buds FE Wireless</h3>
-      <div class="refrigerator-rating">⭐ 4.5 (429 reviews)</div>
-      <div class="refrigerator-color">Color: Arctic Black</div>
-      <div class="refrigerator-capacity">Battery upto  22 hour</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹8999</span>
-        <span class="refrigerator-old">₹10999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
       </div>
     </div>
+  </div>
 
-
-    
-    <div class="refrigerator-card">
-      <img src="images/buds 3.avif" alt="burds3 " class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Buds3</h3>
-      <div class="refrigerator-rating">⭐ 4.3 (460 reviews)</div>
-      <div class="refrigerator-color">Color: Black White </div>
-      <div class="refrigerator-capacity">Battery upto  40 hour</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹10999</span>
-        <span class="refrigerator-old">₹14999</span>
+  <!-- Add other products similarly -->
+  <!-- Galaxy Buds+ -->
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/fe wereless u.jpeg" alt="Galaxy Buds+" class="w-full h-48 object-contain bg-gray-50" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Buds+</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.1 (2,100 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Blue</p>
+      <p class="text-xs mb-2 text-gray-500">11 hrs Battery | Dual Drivers</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹5,499</span>
+        <span class="text-gray-400 line-through text-sm">₹8,999</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
-    </div>
-
-
-
-    
-    <div class="refrigerator-card">
-      <img src="images/Galaxy Buds FE.avif" alt="Galaxy Buds FE" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Buds FE</h3>
-      <div class="refrigerator-rating">⭐ 4.2 (520 reviews)</div>
-      <div class="refrigerator-color">Color:  white </div>
-      <div class="refrigerator-capacity">Battery upto  40 hour</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹9999</span>
-        <span class="refrigerator-old">₹12009</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
       </div>
     </div>
+  </div>
 
 
-    
-    <div class="refrigerator-card">
-      <img src="images/galxy buds.avif" alt="burds3 pro" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Buds</h3>
-      <div class="refrigerator-rating">⭐ 3.9 (320 reviews)</div>
-      <div class="refrigerator-color">Color: White</div>
-      <div class="refrigerator-capacity">Battery upto  24 hour</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹15999</span>
-        <span class="refrigerator-old">₹19999</span>
+
+  
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/buds 3.avif" alt="Galaxy Buds3" class="w-full h-48 object-contain bg-gray-50" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Buds3</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.1 (2,100 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Blue</p>
+      <p class="text-xs mb-2 text-gray-500">11 hrs Battery | Dual Drivers</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹5,499</span>
+        <span class="text-gray-400 line-through text-sm">₹8,999</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
-    </div>
-
-
-
-    
-   <div class="refrigerator-card">
-      <img src="images/buds img live black.png" alt="burds live" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Buds Live</h3>
-      <div class="refrigerator-rating">⭐ 4.5 (429 reviews)</div>
-      <div class="refrigerator-color">Color: Arctic Black</div>
-      <div class="refrigerator-capacity">Battery upto  22 hour</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹10999</span>
-        <span class="refrigerator-old">₹12999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
       </div>
     </div>
+  </div>
 
-
-    
-   <div class="refrigerator-card">
-      <img src="images/buds 2 pro white.avif" alt="burds2 pro" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Buds2 Pro FE</h3>
-      <div class="refrigerator-rating">⭐ 4.3 (620 reviews)</div>
-      <div class="refrigerator-color">Color:  White</div>
-      <div class="refrigerator-capacity">Battery upto  38 hour</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹17999</span>
-        <span class="refrigerator-old">₹20999</span>
+  <!-- Buds 5 -->
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/Galaxy Buds FE.avif" alt="Galaxy Buds FE" class="w-full h-48 object-contain bg-gray-50" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Buds FE</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.1 (2,100 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Blue</p>
+      <p class="text-xs mb-2 text-gray-500">11 hrs Battery | Dual Drivers</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹5,499</span>
+        <span class="text-gray-400 line-through text-sm">₹8,999</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
       </div>
     </div>
-  </section>
+  </div>
 
+  <!-- Buds 6 -->
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/galxy buds.avif" alt="Galaxy Buds" class="w-full h-48 object-contain bg-gray-50" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Buds</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.1 (2,100 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Blue</p>
+      <p class="text-xs mb-2 text-gray-500">11 hrs Battery | Dual Drivers</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹5,499</span>
+        <span class="text-gray-400 line-through text-sm">₹8,999</span>
+      </div>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+      </div>
+    </div>
+  </div>
 
+  <!-- Buds 7 -->
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/buds img live black.png" alt="Galaxy Buds Live" class="w-full h-48 object-contain bg-gray-50" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Buds Live</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.1 (2,100 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Blue</p>
+      <p class="text-xs mb-2 text-gray-500">11 hrs Battery | Dual Drivers</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹5,499</span>
+        <span class="text-gray-400 line-through text-sm">₹8,999</span>
+      </div>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+      </div>
+    </div>
+  </div>
 
-  <!-- footer Section -->
-<section class="footer-navigation">
-  <div class="footer-container">
-    <div class="footer-column">
-      <h4 class="footer-heading">Product & Service</h4>
-      <ul class="footer-links">
+  <!-- Buds 8 -->
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/buds 2 pro white.avif" alt="Galaxy Buds2 Pro FE" class="w-full h-48 object-contain bg-gray-50" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Buds2 Pro FE</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.1 (2,100 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Blue</p>
+      <p class="text-xs mb-2 text-gray-500">11 hrs Battery | Dual Drivers</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹5,499</span>
+        <span class="text-gray-400 line-through text-sm">₹8,999</span>
+      </div>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add the remaining buds cards the same way -->
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-white border-t mt-12 py-8 text-sm text-gray-600">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+    <div>
+      <h4 class="font-semibold mb-2">Product & Service</h4>
+      <ul class="space-y-1 text-xs">
         <li>Smartphones</li>
         <li>Tablets</li>
         <li>Audio Sound</li>
         <li>Watches</li>
         <li>Smart Switch</li>
-        <li>Mobile Accessories</li>
         <li>TVs</li>
-        <li>Sound Devices</li>
-        <li>Refrigerators</li>
-        <li>Laundry</li>
-        <li>Air Solutions</li>
-        <li>Cooking Appliances</li>
         <li>Monitors</li>
         <li>Memory Storage</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Shop</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">Shop</h4>
+      <ul class="space-y-1 text-xs">
         <li>FAQs</li>
-        <li>Contact Us</li>
         <li>Welcome Voucher</li>
-        <li>Samsung Referral Advantage</li>
-        <li>Samsung Student Advantage</li>
-        <li>Defence Purchase Program</li>
-        <li>Corporate Employee Program</li>
-        <li>Corporate Bulk Purchase</li>
-        <li>Samsung Experience Store</li>
         <li>Store Locator</li>
-        <li>Smart Club</li>
-        <li>Terms of Use</li>
-        <li>Order Grievance Redressal</li>
-        <li>Explore</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Support</h4>
-      <ul class="footer-links">
-        <li>WhatsApp Us</li>
-        <li>Sign Language</li>
-        <li>Email Us</li>
+    <div>
+      <h4 class="font-semibold mb-2">Support</h4>
+      <ul class="space-y-1 text-xs">
         <li>Call Us</li>
-        <li>Email the CEO</li>
-        <li>Community</li>
-        <li>Product Registration</li>
         <li>Track Repair</li>
         <li>Service Centre</li>
-        <li>Share Your Opinion</li>
-        <li>Chat with us</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Account & Community</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">Account & Community</h4>
+      <ul class="space-y-1 text-xs">
         <li>My Page</li>
-        <li>My Products</li>
         <li>Orders</li>
         <li>Wishlist</li>
-        <li>Vouchers</li>
-        <li>My Referrals</li>
-        <li>Service</li>
-        <li>Community</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Sustainability</h4>
-      <ul class="footer-links">
-        <li>Environment</li>
-        <li>Security & Privacy</li>
-        <li>Accessibility</li>
-        <li>Diversity · Equity · Inclusion</li>
-        <li>Corporate Citizenship</li>
-        <li>Corporate Sustainability</li>
-      </ul>
-      <h4 class="footer-heading">About Us</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">About Us</h4>
+      <ul class="space-y-1 text-xs">
         <li>Company Info</li>
-        <li>Business Area</li>
-        <li>Brand Identity</li>
         <li>Careers</li>
-        <li>Investor Relations</li>
         <li>Newsroom</li>
-        <li>Ethics</li>
-        <li>Samsung Design</li>
       </ul>
     </div>
   </div>
-</section>
+</footer>
 
-
-  
-  <script src="refrigerators.js"></script>
+<script src="refrigerators.js"></script>
 </body>
 </html>

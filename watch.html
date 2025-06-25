@@ -2,265 +2,244 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>watch</title>
-  <link rel="stylesheet" href="refrigerators.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samsung Watches</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { scroll-behavior: smooth; }
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out both; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body>
-  <header class="refrigerator-header">
-    <input type="text" id="searchInput" class="refrigerator-search" placeholder="🔍 Search here..."/>
-     <select id="sortSelect" class="sort-dropdown">
-      <option value="">Sort by Price</option>
-      <option value="low">Low to High</option>
-      <option value="high">High to Low</option>
-    </select>
-    <a href="cart.html" class="cart-link">🛒 Cart</a>
-  </header>
+<body class="bg-gradient-to-b from-white to-gray-100 text-gray-800">
 
-  <section class="refrigerator-container" id="refrigeratorList">
-    
-    <div class="refrigerator-card">
-      <img src="images/watch 6.webp" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name">Galaxy Watch 6  </h3>
-      <div class="refrigerator-rating">⭐ 4.2 (320 reviews)</div>
-      <div class="refrigerator-color">Color: black</div>
-      <div class="refrigerator-capacity">47mm, Black, Compatible with Android only</div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹22999</span>
-        <span class="refrigerator-old">₹30999</span>
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-md">
+  <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-4">
+    <a href="index.html" class="flex-shrink-0">
+      <img src="https://www.samsung.com/in/web/dist/img/gnb-mobile-240x64.103c8c2.png" alt="Samsung Logo" class="h-6 md:h-8">
+    </a>
+    <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mt-4 sm:mt-0">
+      <input id="searchInput" type="text" placeholder="🔍 Search here..." class="px-3 py-2 border border-gray-300 rounded-lg text-sm w-full sm:w-60">
+      <select id="sortSelect" class="border border-gray-300 px-3 py-2 rounded-lg text-sm w-full sm:w-44">
+        <option value="">Sort by Price</option>
+        <option value="low">Low to High</option>
+        <option value="high">High to Low</option>
+      </select>
+      <a href="cart.html" class="relative" id="cartIconLink">
+        <i class="fas fa-shopping-cart text-2xl text-gray-800"></i>
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Watch Cards -->
+<main id="refrigeratorList" class="max-w-7xl mx-auto px-4 py-8 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+  <!-- Start Watch Cards -->
+  <!-- Repeat this structure for each product -->
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/watch 6.webp" alt="Galaxy Watch 6" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Watch 6</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.2 (320 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Black</p>
+      <p class="text-xs mb-2 text-gray-500">47mm | Android Compatible</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹22,999</span>
+        <span class="text-gray-400 line-through text-sm">₹30,999</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
       </div>
     </div>
+  </div>
 
-
-
-    <div class="refrigerator-card">
-      <img src="images/galaxy ultra n.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"></h3>Galaxy Watch Ultra</h3>
-      <div class="refrigerator-rating">⭐ 4.2 (320 reviews)</div>
-      <div class="refrigerator-color">Color: gray</div>
-      <div class="refrigerator-capacity">with Upto 100h battery | 3nm Processor | Dual GPS </div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹32999</span>
-        <span class="refrigerator-old">₹40999</span>
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/galaxy ultra n.jpg" alt="Galaxy Watch Ultra" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Watch Ultra</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.3 (820 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Green</p>
+      <p class="text-xs mb-2 text-gray-500">100+ Watchfaces | 14-Day Battery</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹33,999</span>
+        <span class="text-gray-400 line-through text-sm">₹49,999</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
-    </div>
-
-
-
-    <div class="refrigerator-card">
-      <img src="images/scan galaxy.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"></h3>Withings ScanWatch Light</h3>
-      <div class="refrigerator-rating">⭐ 4.1(220 reviews)</div>
-      <div class="refrigerator-color">Color: black</div>
-      <div class="refrigerator-capacity">GPS, 30-Day Battery Life, Android & Apple Compatible </div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹23999</span>
-        <span class="refrigerator-old">₹30999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
       </div>
     </div>
+  </div>
 
-
-
-      <div class="refrigerator-card">
-      <img src="images/fit 3.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"></h3> Galaxy FIT 3</h3>
-      <div class="refrigerator-rating">⭐ 4.1(220 reviews)</div>
-      <div class="refrigerator-color">Color: black</div>
-      <div class="refrigerator-capacity">14 Days Battery Life | 100+ Watchfaces | 100+ Exercise Modes </div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹3999</span>
-        <span class="refrigerator-old">₹9999</span>
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/scan galaxy.jpg" alt="ScanWatch Light" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Withings ScanWatch Light</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.3 (820 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Green</p>
+      <p class="text-xs mb-2 text-gray-500">100+ Watchfaces | 14-Day Battery</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹33,999</span>
+        <span class="text-gray-400 line-through text-sm">₹49,999</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
-    </div>
-
-
-
-     <div class="refrigerator-card">
-      <img src="images/watch7.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"></h3>Galaxy Watch 7</h3>
-      <div class="refrigerator-rating">⭐ 4.3(820 reviews)</div>
-      <div class="refrigerator-color">Color: green</div>
-      <div class="refrigerator-capacity">14 Days Battery Life | 100+ Watchfaces | 100+ Exercise Modes </div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹33999</span>
-        <span class="refrigerator-old">₹49999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
       </div>
     </div>
+  </div>
 
-
-
-     <div class="refrigerator-card">
-      <img src="images/ultra white.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"></h3>Galaxy Watch Ultra FE</h3>
-      <div class="refrigerator-rating">⭐ 4.2(820 reviews)</div>
-      <div class="refrigerator-color">Color: White</div>
-      <div class="refrigerator-capacity">Upto 100h battery | 3nm Processor | Dual GPS  </div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹36999</span>
-        <span class="refrigerator-old">₹49999</span>
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/fit 3.jpg" alt="Galaxy FIT 3" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy FIT 3</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.3 (820 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Green</p>
+      <p class="text-xs mb-2 text-gray-500">100+ Watchfaces | 14-Day Battery</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹33,999</span>
+        <span class="text-gray-400 line-through text-sm">₹49,999</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
-      </div>
-    </div>
-
-
-
-     <div class="refrigerator-card">
-      <img src="images/watch 6.webp" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"></h3>Galaxy Watch 6</h3>
-      <div class="refrigerator-rating">⭐ 4.2(820 reviews)</div>
-      <div class="refrigerator-color">Color: White</div>
-      <div class="refrigerator-capacity">Dual GPS | Sapphire Glass & Armour Aluminum | 5ATM & IP68 </div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹26999</span>
-        <span class="refrigerator-old">₹31999</span>
-      </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
       </div>
     </div>
+  </div>
 
-
-
-    <div class="refrigerator-card">
-      <img src="images/galaxy 5.jpg" alt="CoolMaster 450L" class="refrigerator-image" />
-      <h3 class="refrigerator-name"></h3>Galaxy Watch 5</h3>
-      <div class="refrigerator-rating">⭐ 4.1(720 reviews)</div>
-      <div class="refrigerator-color">Color: Oranage</div>
-      <div class="refrigerator-capacity">100h Battery | 3nm Processor | Dual GPS | Quick Button/Siren  </div>
-      <div class="refrigerator-price">
-        <span class="refrigerator-new">₹36999</span>
-        <span class="refrigerator-old">₹41999</span>
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/watch7.jpg" alt="Galaxy Watch 7" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Watch 7</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.3 (820 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Green</p>
+      <p class="text-xs mb-2 text-gray-500">100+ Watchfaces | 14-Day Battery</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹33,999</span>
+        <span class="text-gray-400 line-through text-sm">₹49,999</span>
       </div>
-      <div class="refrigerator-actions">
-        <button class="refrigerator-cart">🛒 Add to Cart</button>
-        <button class="refrigerator-info">Learn more</button>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
       </div>
     </div>
+  </div>
 
-  </section>
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/ultra white.jpg" alt="Galaxy Watch Ultra FE" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Watch Ultra FE</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.3 (820 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Green</p>
+      <p class="text-xs mb-2 text-gray-500">100+ Watchfaces | 14-Day Battery</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹33,999</span>
+        <span class="text-gray-400 line-through text-sm">₹49,999</span>
+      </div>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+      </div>
+    </div>
+  </div>
 
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/galaxy 5.jpg" alt="Galaxy Watch 5" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Watch 5</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.3 (820 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Green</p>
+      <p class="text-xs mb-2 text-gray-500">100+ Watchfaces | 14-Day Battery</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹33,999</span>
+        <span class="text-gray-400 line-through text-sm">₹49,999</span>
+      </div>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+      </div>
+    </div>
+  </div>
 
+  <div class="refrigerator-card bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg">
+    <img src="images/galaxy ultra n.jpg" alt="Galaxy Watch Ultra" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h3 class="refrigerator-name text-lg font-semibold text-gray-800">Galaxy Watch Ultra</h3>
+      <p class="text-sm text-gray-600 mb-1">⭐ 4.3 (820 reviews)</p>
+      <p class="text-xs text-gray-500">Color: Green</p>
+      <p class="text-xs mb-2 text-gray-500">100+ Watchfaces | 14-Day Battery</p>
+      <div class="flex items-center space-x-2 mb-3">
+        <span class="refrigerator-new text-blue-600 font-semibold text-base">₹33,999</span>
+        <span class="text-gray-400 line-through text-sm">₹49,999</span>
+      </div>
+      <div class="flex space-x-2">
+        <button class="refrigerator-cart bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition">🛒 Add</button>
+        <button class="border border-gray-300 text-sm px-4 py-2 rounded hover:bg-gray-100 transition">Learn more</button>
+      </div>
+    </div>
+  </div>
+</main>
 
-  
-  <!-- footer Section -->
-<section class="footer-navigation">
-  <div class="footer-container">
-    <div class="footer-column">
-      <h4 class="footer-heading">Product & Service</h4>
-      <ul class="footer-links">
+<!-- Footer -->
+<footer class="bg-white border-t mt-12 py-8 text-sm text-gray-600">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+    <div>
+      <h4 class="font-semibold mb-2">Product & Service</h4>
+      <ul class="space-y-1 text-xs">
         <li>Smartphones</li>
         <li>Tablets</li>
         <li>Audio Sound</li>
         <li>Watches</li>
         <li>Smart Switch</li>
-        <li>Mobile Accessories</li>
         <li>TVs</li>
-        <li>Sound Devices</li>
-        <li>Refrigerators</li>
-        <li>Laundry</li>
-        <li>Air Solutions</li>
-        <li>Cooking Appliances</li>
         <li>Monitors</li>
         <li>Memory Storage</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Shop</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">Shop</h4>
+      <ul class="space-y-1 text-xs">
         <li>FAQs</li>
-        <li>Contact Us</li>
         <li>Welcome Voucher</li>
-        <li>Samsung Referral Advantage</li>
-        <li>Samsung Student Advantage</li>
-        <li>Defence Purchase Program</li>
-        <li>Corporate Employee Program</li>
-        <li>Corporate Bulk Purchase</li>
-        <li>Samsung Experience Store</li>
         <li>Store Locator</li>
-        <li>Smart Club</li>
-        <li>Terms of Use</li>
-        <li>Order Grievance Redressal</li>
-        <li>Explore</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Support</h4>
-      <ul class="footer-links">
-        <li>WhatsApp Us</li>
-        <li>Sign Language</li>
-        <li>Email Us</li>
+    <div>
+      <h4 class="font-semibold mb-2">Support</h4>
+      <ul class="space-y-1 text-xs">
         <li>Call Us</li>
-        <li>Email the CEO</li>
-        <li>Community</li>
-        <li>Product Registration</li>
         <li>Track Repair</li>
         <li>Service Centre</li>
-        <li>Share Your Opinion</li>
-        <li>Chat with us</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Account & Community</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">Account & Community</h4>
+      <ul class="space-y-1 text-xs">
         <li>My Page</li>
-        <li>My Products</li>
         <li>Orders</li>
         <li>Wishlist</li>
-        <li>Vouchers</li>
-        <li>My Referrals</li>
-        <li>Service</li>
-        <li>Community</li>
       </ul>
     </div>
-    <div class="footer-column">
-      <h4 class="footer-heading">Sustainability</h4>
-      <ul class="footer-links">
-        <li>Environment</li>
-        <li>Security & Privacy</li>
-        <li>Accessibility</li>
-        <li>Diversity · Equity · Inclusion</li>
-        <li>Corporate Citizenship</li>
-        <li>Corporate Sustainability</li>
-      </ul>
-      <h4 class="footer-heading">About Us</h4>
-      <ul class="footer-links">
+    <div>
+      <h4 class="font-semibold mb-2">About Us</h4>
+      <ul class="space-y-1 text-xs">
         <li>Company Info</li>
-        <li>Business Area</li>
-        <li>Brand Identity</li>
         <li>Careers</li>
-        <li>Investor Relations</li>
         <li>Newsroom</li>
-        <li>Ethics</li>
-        <li>Samsung Design</li>
       </ul>
     </div>
   </div>
-</section>
+</footer>
 
-  <script src="refrigerators.js"></script>
+<!-- JS Link -->
+<script src="refrigerators.js"></script>
 </body>
 </html>
